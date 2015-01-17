@@ -27,14 +27,17 @@
         display: block;
         margin-bottom: 20px;
     }
+
     @font-face {
         font-family: GOTHIC;
         src: url(fonts/GOTHIC.ttf);
     }
+
     @font-face {
         font-family: thaisanslite;
         src: url(fonts/thaisanslite_r1.ttf);
     }
+
     .theme-showcase > p > .btn {
         margin: 5px 0;
     }
@@ -42,74 +45,114 @@
     .theme-showcase .navbar .container {
         width: auto;
     }
+
     .containerMain {
         width: 100%;
     }
+
     .tnav .navbar .container {
         height: 73px;
     }
-    .navbar-inverse{
+
+    .navbar-inverse {
         background-image: url('images/head/Bar.png');
         background-repeat: repeat;
     }
-    .navbar-inverse .navbar-nav>li>a {
+
+    .navbar-inverse .navbar-nav > li > a {
         color: #ffffff;
     }
-    .navbar-nav>li>a {
+
+    .navbar-nav > li > a {
         line-height: 43px;
         font-weight: bolder;
         font-size: 18px;
-        font-family:GOTHIC;
+        font-family: GOTHIC;
     }
+
     .aboutus {
         background-size: cover;
         background-image: url("images/aboutus/BG.png");
+
     }
 
     .aboutFontSizeDetail {
         font-size: 22px;
         font-weight: bolder;
     }
+
     .aboutFontSizeHead {
         font-size: 40px;
         font-weight: bolder;
     }
+
+    .portfilios {
+        background-size: cover;
+        background-image: url("images/portfilios/BG.png");
+    }
+
+    .services {
+        background-size: cover;
+        background-image: url("images/services/BG.png");
+    }
+
+    .serviceImg {
+        position: relative;
+    }
+
+    .serviceImg .serviceHover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
+
+    .serviceImg:hover .serviceHover {
+        opacity: 1;
+        z-index: 10;
+    }
+
 </style>
 <body role="document">
+
 <!-- Fixed navbar -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
             <a href="#">
-                <img src="images/head/logo.png">
+                <a href="#main">
+                    <img src="images/head/logo.png">
+                </a>
             </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">HOME</a></li>
-                <li><a href="#about">ABOUT US</a></li>
-                <li><a href="#PORTFOLIO">PORTFOLIO</a></li>
-                <li><a href="#SERVICES">SERVICES</a></li>
-                <li><a href="#CONTACT">CONTACT</a></li>
+                <li class="active liMain"><a href="#main">HOME</a></li>
+                <li class="liAbout"><a href="#aboutus">ABOUT US</a></li>
+                <li class="liPortfolio"><a href="#portfilios">PORTFOLIO</a></li>
+                <li class="liService"><a href="#services">SERVICES</a></li>
+                <li class="liContact"><a href="#contact">CONTACT</a></li>
             </ul>
             <ul class="nav navbar-nav" style="float: right;">
-                <li><a href="#" style="font-size: 44px;font-weight: normal;padding: 12px 0px 12px 0px;color:#ffffff;">|</a></li>
+                <li><a href="#"
+                       style="font-size: 44px;font-weight: normal;padding: 12px 0px 12px 0px;color:#ffffff;">|</a></li>
                 <li><a href="#"><img src="images/head/iconFacebook.png"></a></li>
                 <li><a href="#"><img src="images/head/iconyoutube.png"></a></li>
                 <li><a href="#"><img src="images/head/icongmail.png"></a></li>
             </ul>
-        </div><!--/.nav-collapse -->
+        </div>
+        <!--/.nav-collapse -->
 
     </div>
 </nav>
 
 
-<div class="containerMain theme-showcase" role="main">
+<div class="containerMain theme-showcase" role="main" >
 
     <!-- Main -->
     <div>
         <!-- Head -->
-        <div class="head" style="width:100%;overflow: hidden;position: relative;">
+        <div class="head" style="width:100%;overflow: hidden;position: relative;" id="main">
             <!-- < > -->
             <div style="position: absolute;top:50%;left: 0px;z-index: 10">
                 <span><img src="images/head/arrowL.png"></span>
@@ -120,42 +163,46 @@
             <!-- END < > -->
             <!-- Video Block -->
             <div style="position: relative;top:0px;left:0px;width: 100%;height: 100%;">
-                    <div style="position: absolute;color:#ffffff;left:60px;top:300px;width: 700px;opacity: 0.0" id="v1">
-                        <h1 style="font-family:GOTHIC;font-size: 40px;">Digital Mirror</h1>
-                        <p style="font-family:thaisanslite;font-size: 30px;">เทคโนโลยีกระจกมอนิเตอร์ เปลี่ยนกระจกเงาเป็นจอภาพมอนิเตอร์<br>
-                            สร้างความหรูหรา แปลกตา สามารถดีไซน์ตามใจความต้องการของลูกค้า<br>
-                            เหมาะสำหรับตกแต่งภายใน งานสื่อโฆษณา โรงแรม ร้านอาหาร บาร์<br>
-                            ห้องประชุม ห้องสัมมนา เป็นต้น
-                        </p>
-                        <p style="margin-top: 26px;margin-left: -4px;">
-                            <a href="#"><img src="images/head/viewmore.png"></a>
-                        </p>
-                    </div>
-                    <video autoplay="true" loop="true" poster="" id="video1" style="display: block;width: 100%;">
-                        <source src="images/head/vf.mp4" type="video/mp4">
-                    </video>
+                <div style="position: absolute;color:#ffffff;left:60px;top:300px;width: 700px;opacity: 0.0" id="v1">
+                    <h1 style="font-family:GOTHIC;font-size: 40px;">Digital Mirror</h1>
+
+                    <p style="font-family:thaisanslite;font-size: 30px;">เทคโนโลยีกระจกมอนิเตอร์
+                        เปลี่ยนกระจกเงาเป็นจอภาพมอนิเตอร์<br>
+                        สร้างความหรูหรา แปลกตา สามารถดีไซน์ตามใจความต้องการของลูกค้า<br>
+                        เหมาะสำหรับตกแต่งภายใน งานสื่อโฆษณา โรงแรม ร้านอาหาร บาร์<br>
+                        ห้องประชุม ห้องสัมมนา เป็นต้น
+                    </p>
+
+                    <p style="margin-top: 26px;margin-left: -4px;">
+                        <a href="#"><img src="images/head/viewmore.png"></a>
+                    </p>
+                </div>
+                <video autoplay="true" loop="true" poster="" id="video1" style="display: block;width: 100%;">
+                    <source src="images/head/vf.mp4" type="video/mp4">
+                </video>
             </div>
             <!-- End Video Block -->
         </div>
         <!-- About US -->
-        <div class="aboutus" style="text-align: center">
-            <div style="font-family: GOTHIC;
-font-weight: bolder;
-font-size: 100px;
-padding-top: 40px;">
+        <div class="aboutus" style="text-align: center" id="aboutus">
+            <div style="font-family: GOTHIC;font-weight: bolder;font-size: 100px;padding-top: 40px;">
                 WHAT WE DO
             </div>
             <div>
                 <div style="display: inline-block;padding: 40px;">
                     <img src="images/aboutus/icon01.png">
+
                     <h1 style="font-family:thaisanslite" class="aboutFontSizeHead">สัมผัส</h1>
+
                     <p style="font-family:thaisanslite" class="aboutFontSizeDetail">
                         สร้างความโดดเด่นของแบรนด์ให้สามารถสัมผัสถึง<br>การผสมผสานระหว่างดิจิตอลและแบนรด์ของคุณ
                     </p>
                 </div>
                 <div style="display: inline-block;padding: 40px;">
                     <img src="images/aboutus/icon02.png">
+
                     <h1 style="font-family:thaisanslite" class="aboutFontSizeHead">เข้าถึง</h1>
+
                     <p style="font-family:thaisanslite" class="aboutFontSizeDetail">
                         สร้างแบบแผนและระดับให้เข้าถึง<br>การตอบสนองระหว่างดิจิตอล และแบนรด์ของคุณ
                     </p>
@@ -164,54 +211,220 @@ padding-top: 40px;">
             <div>
                 <div style="display: inline-block;padding: 40px;">
                     <img src="images/aboutus/icon03.png">
+
                     <h1 style="font-family:thaisanslite" class="aboutFontSizeHead">เข้าใจ</h1>
+
                     <p style="font-family:thaisanslite" class="aboutFontSizeDetail">
                         สร้างประสบการณ์ที่โดดเด่น <br>ด้วยความเข้าใจกลุ่มเป้าหมายของแบนรด์ของคุณ
                     </p>
                 </div>
                 <div style="display: inline-block;padding: 40px;">
                     <img src="images/aboutus/icon04.png">
+
                     <h1 style="font-family:thaisanslite" class="aboutFontSizeHead">แตกต่าง</h1>
+
                     <p style="font-family:thaisanslite" class="aboutFontSizeDetail">
                         สร้างความแตกต่างในการนำเสนอแบนรด์ของคุณ<br>
                         &nbsp;
                     </p>
                 </div>
                 <div style="display: inline-block;padding: 40px;">
-                    <img src="images/aboutus/icon05.png" class="aboutFontSizeHead">
-                    <h1 style="font-family:thaisanslite">เชื่อมั่น</h1>
+                    <img src="images/aboutus/icon05.png">
+
+                    <h1 style="font-family:thaisanslite" class="aboutFontSizeHead">เชื่อมั่น</h1>
+
                     <p style="font-family:thaisanslite" class="aboutFontSizeDetail">
                         สร้างความพึงพอใจของต่อผู้คนอย่างมีระดับ<br>ให้เกิดความเชื่อมั่นในแบนรด์ของคุณ
                     </p>
                 </div>
             </div>
         </div>
+        <!-- Portfilios-->
+        <div class="portfilios" id="portfilios">
+            <div style="padding: 40px;text-align: center;font-family: GOTHIC;font-weight: bolder;font-size: 60px;">
+                PORTFOLIO
+            </div>
+            <div style="font-family: GOTHIC;font-size: 20px;text-align: center;margin-top: -30px;">Change ideas, Change
+                imagine, Change The world bu ImAGE OF US.
+            </div>
+            <div style="padding-bottom: 80px;">
+                <ul style="list-style: none;text-align: center;padding-top: 100px;">
+                    <li style="display: inline-block;padding: 20px;position: relative;"><img
+                            src="images/portfilios/animation.png">
+
+                        <div style="position: absolute;bottom: 14px;text-align: center;width: 203px;font-family: GOTHIC">
+                            <p style="margin-bottom: 0px;font-weight: bolder;">Computer Graphic</p>
+
+                            <p style="font-weight: bolder;font-size: 20px;">Animation</p></div>
+                    </li>
+                    <li style="display: inline-block;padding: 20px;position: relative;"><img
+                            src="images/portfilios/interactive.png">
+
+                        <div style="position: absolute;bottom: 14px;text-align: center;width: 203px;font-family: GOTHIC">
+                            <p style="font-weight: bolder;font-size: 26px;margin-bottom: 16px;">Interactive</p></div>
+                    </li>
+                    <li style="display: inline-block;padding: 20px;position: relative;"><img
+                            src="images/portfilios/construction.png">
+
+                        <div style="position: absolute;bottom: 14px;text-align: center;width: 203px;font-family: GOTHIC">
+                            <p style="margin-bottom: 0px;font-weight: bolder;">Construction</p>
+
+                            <p style="font-weight: bolder;font-size: 20px;">and Design</p></div>
+                    </li>
+                    <li style="display: inline-block;padding: 20px;position: relative;"><img
+                            src="images/portfilios/multimedia.png">
+
+                        <div style="position: absolute;bottom: 14px;text-align: center;width: 203px;font-family: GOTHIC">
+                            <p style="font-weight: bolder;font-size: 20px;margin-bottom: 20px;">Multimedia</p></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- End Portfilios -->
+        <!-- Services -->
+        <div class="services" id="services">
+            <div style="padding: 40px;text-align: center;font-family: GOTHIC;font-weight: bolder;font-size: 60px;">
+                SERVICES
+            </div>
+            <div style="font-family: GOTHIC;font-size: 20px;text-align: center;margin-top: -30px;">Perfect creative
+                delivery, Branding promos, Innovation passion, Outside The Box
+            </div>
+            <div style="padding-bottom: 100px;">
+                <ul style="list-style: none;text-align: center;padding-top: 100px;display: flex;justify-content: center;">
+                    <li class="serviceImg"><img src="images/services/pic01-BL.png"><img src="images/services/pic01.png"
+                                                                                        class="serviceHover"></li>
+                    <li class="serviceImg"><img src="images/services/pic02-BL.png"><img src="images/services/pic02.png"
+                                                                                        class="serviceHover"></li>
+                    <li class="serviceImg"><img src="images/services/pic03-BL.png"><img src="images/services/pic03.png"
+                                                                                        class="serviceHover"></li>
+                    <li class="serviceImg"><img src="images/services/pic04-BL.png"><img src="images/services/pic04.png"
+                                                                                        class="serviceHover"></li>
+                </ul>
+            </div>
+        </div>
+        <!-- End Services -->
+        <!-- CONTACT -->
+        <div class="container" style="padding-bottom: 116px;" id="contact">
+            <div style="padding: 40px;font-family: GOTHIC;font-weight: bolder;font-size: 30px;">| CONTACT</div>
+            <div style="background-color: #000000;height: 200px;"></div>
+            <div style="display: flex;">
+                <div style="width: 50%;font-family: GOTHIC;font-size: 16px;padding: 10px;">
+                    <div style="font-weight: bolder;">CONTACT INFORMATION</div>
+                    <div><br>
+                        Bangbon 3 Soi 4,
+                    </div>
+                    <div>
+                        <p>Tel. (66)-2101-8972</p>
+
+                        <p>info@Tufftex.co.th</p>
+                    </div>
+                </div>
+                <div style="position: relative;top: -50px;background-color: #ffffff;padding: 10px;font-family: GOTHIC;font-size: 12px;font-weight: bold;color: gray;">
+                    <div>
+                        <div style="display: flex">
+                            <div style="padding: 10px;">YOUR NAME<br>
+                                <input type="text" class="form-control" placeholder="Enter Name">
+                            </div>
+                            <div style="padding: 10px;">
+                                YOUR EMAIL<br>
+                                <input type="email" class="form-control"  placeholder="Enter email">
+                            </div>
+
+                        </div>
+                        <div style="padding: 10px;">
+                            Your MESSAGE<br>
+                            <textarea type="text" class="form-control" name="msg" value="" style="width: 100%;height: 126px;"></textarea><br>
+                            <button type="button" class="btn btn-success">SEND MESSAGE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END CONTACT -->
+        </div>
     </div>
 
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("html").niceScroll();
 
-</div>
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/bootstrap.min.js"></script>
-<script>
-    $(document).ready(function() {
-
-        setTimeout(function(){
-
-                $( "#v1" ).animate({
+            setTimeout(function () {
+                $("#v1").animate({
                     opacity: 1,
                     top: "40"
-                }, 1000, function() {
-
+                }, 1000, function () {
                 });
+            }, 2000);
 
-        },2000);
+            $('a[href*=#]:not([href=#])').click(function() {
+                if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                    if (target.length) {
+                        $("html, body").animate({
+                            scrollTop: target.offset().top-73
+                        }, 1000);
+                        return false;
+                    }
+                }
+            });
+
+            var mainHeight = $("#main").height();
+            var aboutusHeight = $("#aboutus").height();
+            var portfolioHeight = $("#portfilios").height();
+            var servicesHeight = $("#services").height();
+            var contactHeight = $("#contact").height();
+
+            $(window).scroll(function () {
+                console.log($(window).scrollTop());
+
+                if ($(window).scrollTop() == 0 ) {
+                    clearliActive();
+                    $(".liMain").addClass("active");
+                }
+
+                if ($(window).scrollTop() > $("#aboutus").offset().top-74)  {
+                    clearliActive();
+                    $(".liAbout").addClass("active");
+                }
+
+                if ($(window).scrollTop() > $("#portfilios").offset().top-74)  {
+                    clearliActive();
+                    $(".liPortfolio").addClass("active");
+                }
+
+                if ($(window).scrollTop() > $("#services").offset().top-74)  {
+                    clearliActive();
+                    $(".liService").addClass("active");
+                }
+
+                if ($(window).scrollTop() > $("#contact").offset().top-100)  {
+                    clearliActive();
+                    $(".liContact").addClass("active");
+                }
 
 
+                console.log("about " + $("#aboutus").offset().top);
+                console.log("portfolios " + $("#portfilios").offset().top);
+                console.log("services " + $("#services").offset().top);
+                console.log("contact " + $("#contact").offset().top);
 
-    });
-</script>
+
+            });
+
+            function clearliActive() {
+                $(".liMain").removeClass("active");
+                $(".liAbout").removeClass("active");
+                $(".liPortfolio").removeClass("active");
+                $(".liService").removeClass("active");
+                $(".liContact").removeClass("active");
+            }
+
+        });
+    </script>
 </body>
 </html>
