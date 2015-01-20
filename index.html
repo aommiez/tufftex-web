@@ -18,7 +18,6 @@
 </head>
 <style>
     body {
-        padding-top: 70px;
         padding-bottom: 30px;
     }
 
@@ -55,8 +54,14 @@
     }
 
     .navbar-inverse {
-        background-image: url('images/head/Bar.png');
+        transition: background 300ms;
+        background-image: none;
         background-repeat: repeat;
+        border-color: #ffffff;
+        background-color:transparent;
+    }
+    .navbar-inverse.fontBlack {
+
     }
 
     .navbar-inverse .navbar-nav > li > a {
@@ -71,8 +76,7 @@
     }
 
     .aboutus {
-        background-size: cover;
-        background-image: url("images/aboutus/BG.png");
+
 
     }
 
@@ -111,17 +115,62 @@
         opacity: 1;
         z-index: 10;
     }
+    .exProfile {
+        padding: 20px;
+        padding-top: 100px;
+        font-family: GOTHIC;
+    }
+    .exProfileName {
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .exProfileTitle {
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .exProfileDetail {
+        color: gray;
+    }
 
+    .navbar.fontBlack {
+        opacity: 1;
+    }
+    .navbar.fontWhite a {
+        color: #ffffff;
+    }
+    .navbar-inverse.fontBlack .navbar-nav > li.active > a {
+        color: #ffffff;
+    }
+    .navbar-inverse.fontBlack .navbar-nav > li > a {
+        color: #000000;
+    }
+    .navbarBg {
+        position: absolute;
+        z-index: -1;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 300ms;
+        background-image: url('images/bar/line.png');
+    }
+    .navbar-inverse.fontBlack .navbarBg {
+        opacity: 1;
+    }
 </style>
 <body role="document">
 
 <!-- Fixed navbar -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbarBg">
+
+    </div>
     <div class="container">
         <div class="navbar-header">
             <a href="#">
                 <a href="#main">
-                    <img src="images/head/logo.png">
+                    <img src="images/bar/logo.png" class="logoImg">
                 </a>
             </a>
         </div>
@@ -183,59 +232,221 @@
             </div>
             <!-- End Video Block -->
         </div>
+        <!-- -webkit-transform: translateX(-50%);
+-webkit-transition: -webkit-transform 400ms; -->
         <!-- About US -->
-        <div class="aboutus" style="text-align: center" id="aboutus">
-            <div style="font-family: GOTHIC;font-weight: bolder;font-size: 100px;padding-top: 40px;">
-                WHAT WE DO
+        <div class="aboutus" style="text-align: center;overflow: hidden;position: relative;" id="aboutus">
+            <div style="position: absolute;top:50%;left: 0px;z-index: 10">
+                <span id="aboutLarrow"><img src="images/head/arrowL.png"></span>
             </div>
-            <div>
-                <div style="display: inline-block;padding: 40px;">
-                    <img src="images/aboutus/icon01.png">
-
-                    <h1 style="font-family:thaisanslite" class="aboutFontSizeHead">สัมผัส</h1>
-
-                    <p style="font-family:thaisanslite" class="aboutFontSizeDetail">
-                        สร้างความโดดเด่นของแบรนด์ให้สามารถสัมผัสถึง<br>การผสมผสานระหว่างดิจิตอลและแบนรด์ของคุณ
-                    </p>
-                </div>
-                <div style="display: inline-block;padding: 40px;">
-                    <img src="images/aboutus/icon02.png">
-
-                    <h1 style="font-family:thaisanslite" class="aboutFontSizeHead">เข้าถึง</h1>
-
-                    <p style="font-family:thaisanslite" class="aboutFontSizeDetail">
-                        สร้างแบบแผนและระดับให้เข้าถึง<br>การตอบสนองระหว่างดิจิตอล และแบนรด์ของคุณ
-                    </p>
-                </div>
+            <div style="position: absolute;top:50%;right: 0px;z-index: 10">
+                <span id="aboutRarrow"><img src="images/head/arrowR.png"></span>
             </div>
-            <div>
-                <div style="display: inline-block;padding: 40px;">
-                    <img src="images/aboutus/icon03.png">
+            <div style="display: flex;width: 400%" id="aboutMainDiv">
+                <div style="background-size: cover;background-image: url(images/aboutus/BG.png);width: 100%">
+                    <div style="font-family: GOTHIC;font-weight: bolder;font-size: 40px;padding-top: 40px;">
+                       | WHAT WE DO
+                    </div>
+                    <div>
+                        <div style="display: inline-block;padding: 40px;">
+                            <img src="images/aboutus/icon01.png">
 
-                    <h1 style="font-family:thaisanslite" class="aboutFontSizeHead">เข้าใจ</h1>
+                            <h1 style="font-family:thaisanslite" class="aboutFontSizeHead">สัมผัส</h1>
 
-                    <p style="font-family:thaisanslite" class="aboutFontSizeDetail">
-                        สร้างประสบการณ์ที่โดดเด่น <br>ด้วยความเข้าใจกลุ่มเป้าหมายของแบนรด์ของคุณ
-                    </p>
+                            <p style="font-family:thaisanslite" class="aboutFontSizeDetail">
+                                สร้างความโดดเด่นของแบรนด์ให้สามารถสัมผัสถึง<br>การผสมผสานระหว่างดิจิตอลและแบนรด์ของคุณ
+                            </p>
+                        </div>
+                        <div style="display: inline-block;padding: 40px;">
+                            <img src="images/aboutus/icon02.png">
+
+                            <h1 style="font-family:thaisanslite" class="aboutFontSizeHead">เข้าถึง</h1>
+
+                            <p style="font-family:thaisanslite" class="aboutFontSizeDetail">
+                                สร้างแบบแผนและระดับให้เข้าถึง<br>การตอบสนองระหว่างดิจิตอล และแบนรด์ของคุณ
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="display: inline-block;padding: 40px;">
+                            <img src="images/aboutus/icon03.png">
+
+                            <h1 style="font-family:thaisanslite" class="aboutFontSizeHead">เข้าใจ</h1>
+
+                            <p style="font-family:thaisanslite" class="aboutFontSizeDetail">
+                                สร้างประสบการณ์ที่โดดเด่น <br>ด้วยความเข้าใจกลุ่มเป้าหมายของแบนรด์ของคุณ
+                            </p>
+                        </div>
+                        <div style="display: inline-block;padding: 40px;">
+                            <img src="images/aboutus/icon04.png">
+
+                            <h1 style="font-family:thaisanslite" class="aboutFontSizeHead">แตกต่าง</h1>
+
+                            <p style="font-family:thaisanslite" class="aboutFontSizeDetail">
+                                สร้างความแตกต่างในการนำเสนอแบนรด์ของคุณ<br>
+                                &nbsp;
+                            </p>
+                        </div>
+                        <div style="display: inline-block;padding: 40px;">
+                            <img src="images/aboutus/icon05.png">
+
+                            <h1 style="font-family:thaisanslite" class="aboutFontSizeHead">เชื่อมั่น</h1>
+
+                            <p style="font-family:thaisanslite" class="aboutFontSizeDetail">
+                                สร้างความพึงพอใจของต่อผู้คนอย่างมีระดับ<br>ให้เกิดความเชื่อมั่นในแบนรด์ของคุณ
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div style="display: inline-block;padding: 40px;">
-                    <img src="images/aboutus/icon04.png">
+                <!-- About US 2 -->
+                <div style="background-size: cover;background-image: url(images/company/BG.png);width: 100%;">
+                    <div style="font-family: GOTHIC;font-weight: bolder;font-size: 40px;padding-top: 40px;color: #ffffff;">
+                        COMPANY
+                    </div>
+                    <div style="display: flex;text-align: left;justify-content: center;">
+                        <div style="font-family: GOTHIC;font-size: 90px;font-family: GOTHIC;font-weight: bolder;font-style: italic;color: #ffffff;padding-right: 40px;">
+                            "
+                        </div>
+                        <div style="font-family:thaisanslite;font-size: 34px;font-weight: bolder;padding-top: 20px;">
+                            วิศวกรรุ่นใหม่ สถาปนิก<br>
+                            มัณฑนากร โปรแกรมเมอร์<br>
+                            นักการสื่อสารการตลาด<br>
+                            การประชาสัมพันธ์
+                        </div>
+                        <div style="font-family: GOTHIC;font-size: 90px;font-family: GOTHIC;font-weight: bolder;font-style: italic;color: #ffffff;padding-left: 0px;vertical-align: bottom;padding-top: 146px;position: relative;left: -34px;">
+                            "
+                        </div>
+                        <div style="font-family:thaisanslite;font-size: 20px;font-weight: bolder;padding-left: 120px;padding-top: 43px;">
+                            เน้นบริการด้านการ ออกแบบสื่อโฆษณาต่างๆ<br>
+                            โดยเฉพาะนวัตกรรมที่ทันสมัย ซึงเป็นนวัตกรรม<br>
+                            ที่สร้างะเพื่อโลกในยุคดิจิตัล ด้วยภาพเสียงและข้อความที่แปลกใหม่<br>
+                            ไม่เหมือนใคร ตอบสนองความต้องการ ของผู้บริโภครวม<br>
+                            องค์กร การตลาด และประชาสัมพันธ์<br>
+                            ให้สอดคล้องกับกลุ่มเป้าหมายที่ต้องการ
+                        </div>
+                    </div>
+                    <div style="display: flex;justify-content: center;">
+                        <div style="padding-top: 46px;">
+                            <div style="display: flex;justify-content: center;font-family: GOTHIC;font-size: 60px;">
+                                <div style="background-color: #ffffff;width: 2px;margin-right: 2px;">
+                                </div>
+                                <div style="background-color: #ffffff;width: 2px;margin-right: 10px;">
+                                </div>
+                                <div style="font-family: GOTHIC;text-align: left;">
+                                    Mission
+                                    <div style="display: flex;justify-content: center;font-size: 18px;font-weight: bolder;">
+                                        <div style="font-size: 16px;font-weight: bolder;">
+                                            สร้างผลงานระดับสากล<br>
+                                            มุ่งเน้นบริการและคุณภาพ
+                                        </div>
+                                        <div style="padding-left: 40px;font-size: 16px;font-weight: bolder;">
+                                            ต้นแบบองค์กรสร้างสรรค์และพัฒนาสิ่งใหม่<br>
+                                            ส่งเสริมองค์กรตอบแทนสังคม
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                    <h1 style="font-family:thaisanslite" class="aboutFontSizeHead">แตกต่าง</h1>
-
-                    <p style="font-family:thaisanslite" class="aboutFontSizeDetail">
-                        สร้างความแตกต่างในการนำเสนอแบนรด์ของคุณ<br>
-                        &nbsp;
-                    </p>
+                        <div style="position: relative;top: -22px;">
+                            <div style="display: flex;justify-content: center;font-family: GOTHIC;font-size: 60px;">
+                                <div style="font-family: GOTHIC;text-align: right;">
+                                    Vision
+                                    <div style="display: flex;justify-content: center;font-size: 18px;font-weight: bolder;">
+                                        <div style="font-size: 16px;font-weight: bolder;">
+                                            ผสมผสานการออกแบบและเทคโนโลยีเพื่อความทันสมัยและมีระดับแก่มวลชน
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="background-color: #ffffff;width: 2px;margin-left: 10px;">
+                                </div>
+                                <div style="background-color: #ffffff;width: 2px;margin-left: 2px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- End About US 2 -->
+                <div style="background-size: cover;background-image: url(images/executiveprofile/BG.png);width: 100%;">
+                    <div style="font-family: GOTHIC;font-weight: bolder;font-size: 54px;padding-top: 40px;color: #4B9D9A;">
+                        Executive profiles
+                    </div>
+                    <div style="font-family: GOTHIC;font-weight: bolder;font-size: 22px;padding-top: 6px;color: #ffffff;">
+                        Create value for customer, Breaking old world with imagine of us.
+                    </div>
+                    <div style="display: flex;justify-content: center;">
+                        <div class="exProfile">
+                            <img src="images/executiveprofile/toung.png">
+                            <p class="exProfileName">
+                                Ukit Pakornphadungsit
+                            </p>
+                            <p class="exProfileTitle">
+                                CEO and CO-founder<br>
+                                Executive Director
+                            </p>
+                            <p class="exProfileDetail">
+                                sdsapod<br>
+                                sadsadsa
+                            </p>
+                            <p>
+                                <img src="images/executiveprofile/icon-facebook.png"><img src="images/executiveprofile/icon-gmail.png">
+                            </p>
+                        </div>
+                        <div class="exProfile">
+                            <img src="images/executiveprofile/jade.png">
+                            <p class="exProfileName">
+                                Jadsadaporn Sribua
+                            </p>
+                            <p class="exProfileTitle">
+                                Vice President and CO-fouder<br>
+                                Director
+                            </p>
+                            <p>
+                                sdsapod<br>
+                                sadsadsa
+                            </p>
+                            <p>
+                                <img src="images/executiveprofile/icon-facebook.png"><img src="images/executiveprofile/icon-gmail.png">
+                            </p>
+                        </div>
+                        <div class="exProfile">
+                            <img src="images/executiveprofile/Tom.png">
+                            <p class="exProfileName">
+                                Gasemsit Kumpradid
+                            </p>
+                            <p class="exProfileTitle">
+                                Vice President and CO-founder<br>
+                                Motion Grapher Group Head
+                            </p>
+                            <p>
+                                sdsapod<br>
+                                sadsadsa
+                            </p>
+                            <p>
+                                <img src="images/executiveprofile/icon-facebook.png"><img src="images/executiveprofile/icon-gmail.png">
+                            </p>
+                        </div>
+                        <div class="exProfile">
+                            <img src="images/executiveprofile/been.png">
+                            <p class="exProfileName">
+                                Niran Yodying
+                            </p>
+                            <p class="exProfileTitle">
+                                Vice President and CO-founder<br>
+                                Office Clerk, Operational Level
+                            </p>
+                            <p>
+                                sdsapod<br>
+                                sadsadsa
+                            </p>
+                            <p>
+                                <img src="images/executiveprofile/icon-facebook.png"><img src="images/executiveprofile/icon-gmail.png">
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div style="display: inline-block;padding: 40px;">
-                    <img src="images/aboutus/icon05.png">
 
-                    <h1 style="font-family:thaisanslite" class="aboutFontSizeHead">เชื่อมั่น</h1>
+                <div style="background-size: cover;background-image: url(images/howwedoit/howwedoit.png);width: 100%;">
 
-                    <p style="font-family:thaisanslite" class="aboutFontSizeDetail">
-                        สร้างความพึงพอใจของต่อผู้คนอย่างมีระดับ<br>ให้เกิดความเชื่อมั่นในแบนรด์ของคุณ
-                    </p>
                 </div>
             </div>
         </div>
@@ -355,10 +566,40 @@
             setTimeout(function () {
                 $("#v1").animate({
                     opacity: 1,
-                    top: "40"
+                    top: "80"
                 }, 1000, function () {
                 });
             }, 2000);
+
+            var aboutDivMax = 4;
+            var aboutDivCur = 0;
+            $("#aboutRarrow").click(function(){
+                aboutDivCur++;
+                var pec = aboutDivCur/aboutDivMax;
+                pec = pec*100;
+                if (aboutDivCur == aboutDivMax) {
+                    aboutDivCur--;
+                    return;
+                }
+                $("#aboutMainDiv").css({
+                "-webkit-transform": "translateX(-"+pec+"%)",
+                    "-webkit-transition" : "-webkit-transform 800ms"
+                });
+            });
+
+            $("#aboutLarrow").click(function(){
+                aboutDivCur--;
+                var pec = aboutDivCur/aboutDivMax;
+                pec = pec*100;
+                if (aboutDivCur < 0) {
+                    aboutDivCur++;
+                    return;
+                }
+                $("#aboutMainDiv").css({
+                    "-webkit-transform": "translateX(-"+pec+"%)",
+                    "-webkit-transition" : "-webkit-transform 800ms"
+                });
+            });
 
             $('a[href*=#]:not([href=#])').click(function() {
                 if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -385,6 +626,23 @@
                 if ($(window).scrollTop() == 0 ) {
                     clearliActive();
                     $(".liMain").addClass("active");
+                    $(".logoImg").attr("src","images/bar/logo.png");
+                    /*
+                    $(".navbar-inverse").css({
+                        "background-image" : "url(images/head/Bar.png)"
+                    });
+                    */
+                    $(".navbar").removeClass("fontBlack");
+                }
+
+                if ($(window).scrollTop() > 10 ) {
+                    $(".logoImg").attr("src","images/head/logo.png");
+                    /*
+                    $(".navbar-inverse").css({
+                        "background-image" : "url(images/bar/line.png)"
+                    });*/
+                    $(".navbar").addClass("fontBlack");
+
                 }
 
                 if ($(window).scrollTop() > $("#aboutus").offset().top-74)  {
