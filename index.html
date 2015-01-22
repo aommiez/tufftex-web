@@ -9,6 +9,11 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Font -->
+    <link href="fonts02/font02.css" rel="stylesheet">
+    <link href="css/tufftex-component.css" rel="stylesheet">
+    <link href="css/tufftex.css" rel="stylesheet">
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -17,19 +22,11 @@
     <![endif]-->
 </head>
 <style>
-    body {
-        padding-bottom: 30px;
-    }
 
     .theme-dropdown .dropdown-menu {
         position: static;
         display: block;
         margin-bottom: 20px;
-    }
-
-    @font-face {
-        font-family: GOTHIC;
-        src: url(fonts/GOTHIC.ttf);
     }
 
     @font-face {
@@ -41,44 +38,10 @@
         margin: 5px 0;
     }
 
-    .theme-showcase .navbar .container {
-        width: auto;
-    }
-
     .containerMain {
         width: 100%;
     }
 
-    .tnav .navbar .container {
-        height: 73px;
-    }
-
-    .navbar-inverse {
-        transition: background 300ms;
-        background-image: none;
-        background-repeat: repeat;
-        border-color: #ffffff;
-        background-color:transparent;
-    }
-    .navbar-inverse.fontBlack {
-
-    }
-
-    .navbar-inverse .navbar-nav > li > a {
-        color: #ffffff;
-    }
-
-    .navbar-nav > li > a {
-        line-height: 43px;
-        font-weight: bolder;
-        font-size: 18px;
-        font-family: GOTHIC;
-    }
-
-    .aboutus {
-
-
-    }
 
     .aboutFontSizeDetail {
         font-size: 22px;
@@ -92,7 +55,7 @@
 
     .portfilios {
         background-size: cover;
-        background-image: url("images/portfilios/BG.png");
+        background-image: url("images/portfilios/BG.jpg");
     }
 
     .services {
@@ -102,19 +65,40 @@
 
     .serviceImg {
         position: relative;
+        width: 100%;
+        background: #000000;
+        vertical-align: middle;
+        overflow: hidden;
     }
 
-    .serviceImg .serviceHover {
+    .serviceImg .serviceThumbBox {
+        width: 100%;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    .serviceImg .serviceThumbBox img {
+        width: 100%;
+        opacity: 0.8;
+        transition: opacity 300ms,transform 600ms;
+    }
+
+    .serviceImg:hover .serviceThumbBox img {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+    .serviceImg .serviceThumbContent {
+        color: white;
+        text-shadow: 1px 0 1px rgba(0,0,0,0.3);
         position: absolute;
         top: 0;
         left: 0;
-        opacity: 0;
+        padding-top: 21%;
+        width: 100%;
+        z-index: 1;
     }
 
-    .serviceImg:hover .serviceHover {
-        opacity: 1;
-        z-index: 10;
-    }
     .exProfile {
         padding: 20px;
         padding-top: 100px;
@@ -132,37 +116,33 @@
         color: gray;
     }
 
-    .navbar.fontBlack {
-        opacity: 1;
+
+    .flex-slide-wrap {
+        transition: transform 800ms;
     }
-    .navbar.fontWhite a {
-        color: #ffffff;
-    }
-    .navbar-inverse.fontBlack .navbar-nav > li.active > a {
-        color: #ffffff;
-    }
-    .navbar-inverse.fontBlack .navbar-nav > li > a {
-        color: #000000;
-    }
-    .navbarBg {
-        position: absolute;
-        z-index: -1;
-        left: 0px;
-        top: 0px;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        transition: opacity 300ms;
-        background-image: url('images/bar/line.png');
-    }
-    .navbar-inverse.fontBlack .navbarBg {
-        opacity: 1;
+
+    /** our clients */
+     .ourclient-line {
+         height: 8px;
+         margin: 20px auto;
+         width: 900px;
+         background-image: url(images/ourclients/line-Head-R.jpg);
+         background-repeat: repeat-x;
+     }
+
+    /** construction-line **/
+    .construction-line {
+        height: 8px;
+        width: 400px;
+        display: inline-block;
+        background-image: url(images/line-NEW.png);
+        background-repeat: repeat-x;
     }
 </style>
 <body role="document">
 
 <!-- Fixed navbar -->
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-fixed-top">
     <div class="navbarBg">
 
     </div>
@@ -180,6 +160,7 @@
                 <li class="liAbout"><a href="#aboutus">ABOUT US</a></li>
                 <li class="liPortfolio"><a href="#portfilios">PORTFOLIO</a></li>
                 <li class="liService"><a href="#services">SERVICES</a></li>
+                <li class="liService"><a href="#ourclients">OUR CLIENTS</a></li>
                 <li class="liContact"><a href="#contact">CONTACT</a></li>
             </ul>
             <ul class="nav navbar-nav" style="float: right;">
@@ -194,384 +175,745 @@
 
     </div>
 </nav>
-
-
-<div class="containerMain theme-showcase" role="main" >
+<div class="containerMain theme-showcase" role="main" style="overflow-x: visible; width: 1600px;" >
 
     <!-- Main -->
-    <div>
+    <div class="parallax">
         <!-- Head -->
-        <div class="head" style="width:100%;overflow: hidden;position: relative;" id="main">
-            <!-- < > -->
-            <div style="position: absolute;top:50%;left: 0px;z-index: 10">
+        <div class="head parallax__group" id="main">
+
+            <div class="prev-btn" style="position: absolute;top:50%;left: 0px;z-index: 10">
                 <span><img src="images/head/arrowL.png"></span>
             </div>
-            <div style="position: absolute;top:50%;right: 0px;z-index: 10">
+            <div class="next-btn" style="position: absolute;top:50%;right: 0px;z-index: 10">
                 <span><img src="images/head/arrowR.png"></span>
             </div>
-            <!-- END < > -->
+
             <!-- Video Block -->
-            <div style="position: relative;top:0px;left:0px;width: 100%;height: 100%;">
-                <div style="position: absolute;color:#ffffff;left:60px;top:300px;width: 700px;opacity: 0.0" id="v1">
-                    <h1 style="font-family:GOTHIC;font-size: 40px;">Digital Mirror</h1>
+            <div class="parallax__layer parallax__layer--back flex-slide">
+                <div class="flex-slide-wrap" style="display: flex; width: 300%;">
+                    <div style="position: relative; width: 100%;">
+                        <div style="position: absolute;
+                        z-index: 1;
+color: rgb(255, 255, 255);
+left: 50%;
+top: 80px;
+width: 1050px;
+text-shadow: rgba(0, 0, 0, 0.4) 0px 1px 3px;
+text-align: center;
+margin-left: -525px; margin-top: 228px;" id="v1">
+                            <h1 style="font-family:GOTHIC;font-size: 40px;">1</h1>
 
-                    <p style="font-family:thaisanslite;font-size: 30px;">เทคโนโลยีกระจกมอนิเตอร์
-                        เปลี่ยนกระจกเงาเป็นจอภาพมอนิเตอร์<br>
-                        สร้างความหรูหรา แปลกตา สามารถดีไซน์ตามใจความต้องการของลูกค้า<br>
-                        เหมาะสำหรับตกแต่งภายใน งานสื่อโฆษณา โรงแรม ร้านอาหาร บาร์<br>
-                        ห้องประชุม ห้องสัมมนา เป็นต้น
-                    </p>
+                            <p style="font-family:thaisanslite;font-size: 25px;">
+                                เทคโนโลยีกระจกมอนิเตอร์
+                                เปลี่ยนกระจกเงาเป็นจอภาพมอนิเตอร์
+                                สร้างความหรูหรา แปลกตา สามารถดีไซน์ตามใจความต้องการของลูกค้า<br>
+                                เหมาะสำหรับตกแต่งภายใน งานสื่อโฆษณา โรงแรม ร้านอาหาร บาร์
+                                ห้องประชุม ห้องสัมมนา เป็นต้น
+                            </p>
 
-                    <p style="margin-top: 26px;margin-left: -4px;">
-                        <a href="#"><img src="images/head/viewmore.png"></a>
-                    </p>
+                            <p style="margin-top: 26px;margin-left: -4px;">
+                                <a href="#"><img src="images/head/viewmore.png"></a>
+                            </p>
+                        </div>
+                        <video autoplay="true" loop="true" poster="" id="video1" style="display: block; width: 100%;">
+                            <source src="images/head/vf.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <div style="position: relative; width: 100%;">
+                        <video autoplay="true" loop="true" poster="" id="video2" style="display: block; width: 100%;">
+                            <source src="images/head/vf.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <div style="position: relative; width: 100%;">
+                        <video autoplay="true" loop="true" poster="" id="video3" style="display: block; width: 100%;">
+                            <source src="images/head/vf.mp4" type="video/mp4">
+                        </video>
+                    </div>
                 </div>
-                <video autoplay="true" loop="true" poster="" id="video1" style="display: block;width: 100%;">
-                    <source src="images/head/vf.mp4" type="video/mp4">
-                </video>
             </div>
             <!-- End Video Block -->
         </div>
-        <!-- -webkit-transform: translateX(-50%);
--webkit-transition: -webkit-transform 400ms; -->
         <!-- About US -->
-        <div class="aboutus" style="text-align: center;overflow: hidden;position: relative;" id="aboutus">
-            <div style="position: absolute;top:50%;left: 0px;z-index: 10">
-                <span id="aboutLarrow"><img src="images/head/arrowL.png"></span>
-            </div>
-            <div style="position: absolute;top:50%;right: 0px;z-index: 10">
-                <span id="aboutRarrow"><img src="images/head/arrowR.png"></span>
-            </div>
-            <div style="display: flex;width: 400%" id="aboutMainDiv">
-                <div style="background-size: cover;background-image: url(images/aboutus/BG.png);width: 100%">
-                    <div style="font-family: GOTHIC;font-weight: bolder;font-size: 40px;padding-top: 40px;">
-                       | WHAT WE DO
-                    </div>
-                    <div>
-                        <div style="display: inline-block;padding: 40px;">
-                            <img src="images/aboutus/icon01.png">
+        <div class="aboutus parallax__group" style="text-align: center;overflow: hidden;position: relative;" id="aboutus">
 
-                            <h1 style="font-family:thaisanslite" class="aboutFontSizeHead">สัมผัส</h1>
-
-                            <p style="font-family:thaisanslite" class="aboutFontSizeDetail">
-                                สร้างความโดดเด่นของแบรนด์ให้สามารถสัมผัสถึง<br>การผสมผสานระหว่างดิจิตอลและแบนรด์ของคุณ
-                            </p>
-                        </div>
-                        <div style="display: inline-block;padding: 40px;">
-                            <img src="images/aboutus/icon02.png">
-
-                            <h1 style="font-family:thaisanslite" class="aboutFontSizeHead">เข้าถึง</h1>
-
-                            <p style="font-family:thaisanslite" class="aboutFontSizeDetail">
-                                สร้างแบบแผนและระดับให้เข้าถึง<br>การตอบสนองระหว่างดิจิตอล และแบนรด์ของคุณ
-                            </p>
-                        </div>
-                    </div>
-                    <div>
-                        <div style="display: inline-block;padding: 40px;">
-                            <img src="images/aboutus/icon03.png">
-
-                            <h1 style="font-family:thaisanslite" class="aboutFontSizeHead">เข้าใจ</h1>
-
-                            <p style="font-family:thaisanslite" class="aboutFontSizeDetail">
-                                สร้างประสบการณ์ที่โดดเด่น <br>ด้วยความเข้าใจกลุ่มเป้าหมายของแบนรด์ของคุณ
-                            </p>
-                        </div>
-                        <div style="display: inline-block;padding: 40px;">
-                            <img src="images/aboutus/icon04.png">
-
-                            <h1 style="font-family:thaisanslite" class="aboutFontSizeHead">แตกต่าง</h1>
-
-                            <p style="font-family:thaisanslite" class="aboutFontSizeDetail">
-                                สร้างความแตกต่างในการนำเสนอแบนรด์ของคุณ<br>
-                                &nbsp;
-                            </p>
-                        </div>
-                        <div style="display: inline-block;padding: 40px;">
-                            <img src="images/aboutus/icon05.png">
-
-                            <h1 style="font-family:thaisanslite" class="aboutFontSizeHead">เชื่อมั่น</h1>
-
-                            <p style="font-family:thaisanslite" class="aboutFontSizeDetail">
-                                สร้างความพึงพอใจของต่อผู้คนอย่างมีระดับ<br>ให้เกิดความเชื่อมั่นในแบนรด์ของคุณ
-                            </p>
-                        </div>
-                    </div>
+            <div class="parallax__layer parallax__layer--base">
+                <div style="position: absolute;top:50%;left: 0px;z-index: 10">
+                    <span id="aboutLarrow"><img src="images/head/arrowL.png"></span>
                 </div>
-                <!-- About US 2 -->
-                <div style="background-size: cover;background-image: url(images/company/BG.png);width: 100%;">
-                    <div style="font-family: GOTHIC;font-weight: bolder;font-size: 40px;padding-top: 40px;color: #ffffff;">
-                        COMPANY
+                <div style="position: absolute;top:50%;right: 0px;z-index: 10">
+                    <span id="aboutRarrow"><img src="images/head/arrowR.png"></span>
+                </div>
+
+                <div style="display: flex;width: 300%; height: 100%;" id="aboutMainDiv">
+                    <div class="what-we-do-bg" style="background-size: cover;background-image: url(images/aboutus/BG.jpg);width: 100%">
+                        <div style="font-family: GOTHIC;font-weight: bolder;font-size: 40px;padding-top: 40px;">
+                            | WHAT WE DO
+                        </div>
+                        <div>
+                            <div style="display: inline-block;padding: 40px;">
+                                <img src="images/aboutus/icon01.png">
+
+                                <h1 style="font-family:thaisanslite" class="aboutFontSizeHead">สัมผัส</h1>
+
+                                <p style="font-family:thaisanslite" class="aboutFontSizeDetail">
+                                    สร้างความโดดเด่นของแบรนด์ให้สามารถสัมผัสถึง<br>การผสมผสานระหว่างดิจิตอลและแบนรด์ของคุณ
+                                </p>
+                            </div>
+                            <div style="display: inline-block;padding: 40px;">
+                                <img src="images/aboutus/icon02.png">
+
+                                <h1 style="font-family:thaisanslite" class="aboutFontSizeHead">เข้าถึง</h1>
+
+                                <p style="font-family:thaisanslite" class="aboutFontSizeDetail">
+                                    สร้างแบบแผนและระดับให้เข้าถึง<br>การตอบสนองระหว่างดิจิตอล และแบนรด์ของคุณ
+                                </p>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: inline-block;padding: 40px;">
+                                <img src="images/aboutus/icon03.png">
+
+                                <h1 style="font-family:thaisanslite" class="aboutFontSizeHead">เข้าใจ</h1>
+
+                                <p style="font-family:thaisanslite" class="aboutFontSizeDetail">
+                                    สร้างประสบการณ์ที่โดดเด่น <br>ด้วยความเข้าใจกลุ่มเป้าหมายของแบนรด์ของคุณ
+                                </p>
+                            </div>
+                            <div style="display: inline-block;padding: 40px;">
+                                <img src="images/aboutus/icon04.png">
+
+                                <h1 style="font-family:thaisanslite" class="aboutFontSizeHead">แตกต่าง</h1>
+
+                                <p style="font-family:thaisanslite" class="aboutFontSizeDetail">
+                                    สร้างความแตกต่างในการนำเสนอแบนรด์ของคุณ<br>
+                                    &nbsp;
+                                </p>
+                            </div>
+                            <div style="display: inline-block;padding: 40px;">
+                                <img src="images/aboutus/icon05.png">
+
+                                <h1 style="font-family:thaisanslite" class="aboutFontSizeHead">เชื่อมั่น</h1>
+
+                                <p style="font-family:thaisanslite" class="aboutFontSizeDetail">
+                                    สร้างความพึงพอใจของต่อผู้คนอย่างมีระดับ<br>ให้เกิดความเชื่อมั่นในแบนรด์ของคุณ
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <div style="display: flex;text-align: left;justify-content: center;">
-                        <div style="font-family: GOTHIC;font-size: 90px;font-family: GOTHIC;font-weight: bolder;font-style: italic;color: #ffffff;padding-right: 40px;">
-                            "
+                    <!-- About US 2 -->
+                    <div style="background-size: cover;background-image: url(images/company/bg.jpg); width: 100%;">
+                        <div style="font-family: GOTHIC;font-weight: bolder;font-size: 40px;padding-top: 40px;color: #ffffff;">
+                            COMPANY
                         </div>
-                        <div style="font-family:thaisanslite;font-size: 34px;font-weight: bolder;padding-top: 20px;">
-                            วิศวกรรุ่นใหม่ สถาปนิก<br>
-                            มัณฑนากร โปรแกรมเมอร์<br>
-                            นักการสื่อสารการตลาด<br>
-                            การประชาสัมพันธ์
+                        <div style="display: flex;text-align: left;justify-content: center;">
+                            <div style="font-family: GOTHIC;font-size: 90px;font-family: GOTHIC;font-weight: bolder;font-style: italic;color: #ffffff;padding-right: 40px;">
+                                "
+                            </div>
+                            <div style="font-family:thaisanslite;font-size: 34px;font-weight: bolder;padding-top: 20px;">
+                                วิศวกรรุ่นใหม่ สถาปนิก<br>
+                                มัณฑนากร โปรแกรมเมอร์<br>
+                                นักการสื่อสารการตลาด<br>
+                                การประชาสัมพันธ์
+                            </div>
+                            <div style="font-family: GOTHIC;font-size: 90px;font-family: GOTHIC;font-weight: bolder;font-style: italic;color: #ffffff;padding-left: 0px;vertical-align: bottom;padding-top: 146px;position: relative;left: -34px;">
+                                "
+                            </div>
+                            <div style="font-family:thaisanslite;font-size: 20px;font-weight: bolder;padding-left: 120px;padding-top: 43px;">
+                                เน้นบริการด้านการ ออกแบบสื่อโฆษณาต่างๆ<br>
+                                โดยเฉพาะนวัตกรรมที่ทันสมัย ซึงเป็นนวัตกรรม<br>
+                                ที่สร้างะเพื่อโลกในยุคดิจิตัล ด้วยภาพเสียงและข้อความที่แปลกใหม่<br>
+                                ไม่เหมือนใคร ตอบสนองความต้องการ ของผู้บริโภครวม<br>
+                                องค์กร การตลาด และประชาสัมพันธ์<br>
+                                ให้สอดคล้องกับกลุ่มเป้าหมายที่ต้องการ
+                            </div>
                         </div>
-                        <div style="font-family: GOTHIC;font-size: 90px;font-family: GOTHIC;font-weight: bolder;font-style: italic;color: #ffffff;padding-left: 0px;vertical-align: bottom;padding-top: 146px;position: relative;left: -34px;">
-                            "
-                        </div>
-                        <div style="font-family:thaisanslite;font-size: 20px;font-weight: bolder;padding-left: 120px;padding-top: 43px;">
-                            เน้นบริการด้านการ ออกแบบสื่อโฆษณาต่างๆ<br>
-                            โดยเฉพาะนวัตกรรมที่ทันสมัย ซึงเป็นนวัตกรรม<br>
-                            ที่สร้างะเพื่อโลกในยุคดิจิตัล ด้วยภาพเสียงและข้อความที่แปลกใหม่<br>
-                            ไม่เหมือนใคร ตอบสนองความต้องการ ของผู้บริโภครวม<br>
-                            องค์กร การตลาด และประชาสัมพันธ์<br>
-                            ให้สอดคล้องกับกลุ่มเป้าหมายที่ต้องการ
-                        </div>
-                    </div>
-                    <div style="display: flex;justify-content: center;">
-                        <div style="padding-top: 46px;">
-                            <div style="display: flex;justify-content: center;font-family: GOTHIC;font-size: 60px;">
-                                <div style="background-color: #ffffff;width: 2px;margin-right: 2px;">
-                                </div>
-                                <div style="background-color: #ffffff;width: 2px;margin-right: 10px;">
-                                </div>
-                                <div style="font-family: GOTHIC;text-align: left;">
-                                    Mission
-                                    <div style="display: flex;justify-content: center;font-size: 18px;font-weight: bolder;">
-                                        <div style="font-size: 16px;font-weight: bolder;">
-                                            สร้างผลงานระดับสากล<br>
-                                            มุ่งเน้นบริการและคุณภาพ
-                                        </div>
-                                        <div style="padding-left: 40px;font-size: 16px;font-weight: bolder;">
-                                            ต้นแบบองค์กรสร้างสรรค์และพัฒนาสิ่งใหม่<br>
-                                            ส่งเสริมองค์กรตอบแทนสังคม
+                        <div style="display: flex;justify-content: center;">
+                            <div style="padding-top: 46px;">
+                                <div style="display: flex;justify-content: center;font-family: GOTHIC;font-size: 60px;">
+                                    <div style="background-color: #ffffff;width: 2px;margin-right: 2px;">
+                                    </div>
+                                    <div style="background-color: #ffffff;width: 2px;margin-right: 10px;">
+                                    </div>
+                                    <div style="font-family: GOTHIC;text-align: left;">
+                                        Mission
+                                        <div style="display: flex;justify-content: center;font-size: 18px;font-weight: bolder;">
+                                            <div style="font-size: 16px;font-weight: bolder;">
+                                                สร้างผลงานระดับสากล<br>
+                                                มุ่งเน้นบริการและคุณภาพ
+                                            </div>
+                                            <div style="padding-left: 40px;font-size: 16px;font-weight: bolder;">
+                                                ต้นแบบองค์กรสร้างสรรค์และพัฒนาสิ่งใหม่<br>
+                                                ส่งเสริมองค์กรตอบแทนสังคม
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div style="position: relative;top: -22px;">
-                            <div style="display: flex;justify-content: center;font-family: GOTHIC;font-size: 60px;">
-                                <div style="font-family: GOTHIC;text-align: right;">
-                                    Vision
-                                    <div style="display: flex;justify-content: center;font-size: 18px;font-weight: bolder;">
-                                        <div style="font-size: 16px;font-weight: bolder;">
-                                            ผสมผสานการออกแบบและเทคโนโลยีเพื่อความทันสมัยและมีระดับแก่มวลชน
+                            <div style="position: relative;top: -22px;">
+                                <div style="display: flex;justify-content: center;font-family: GOTHIC;font-size: 60px;">
+                                    <div style="font-family: GOTHIC;text-align: right;">
+                                        Vision
+                                        <div style="display: flex;justify-content: center;font-size: 18px;font-weight: bolder;">
+                                            <div style="font-size: 16px;font-weight: bolder;">
+                                                ผสมผสานการออกแบบและเทคโนโลยีเพื่อความทันสมัยและมีระดับแก่มวลชน
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div style="background-color: #ffffff;width: 2px;margin-left: 10px;">
-                                </div>
-                                <div style="background-color: #ffffff;width: 2px;margin-left: 2px;">
+                                    <div style="background-color: #ffffff;width: 2px;margin-left: 10px;">
+                                    </div>
+                                    <div style="background-color: #ffffff;width: 2px;margin-left: 2px;">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div><!-- End About US 2 -->
-                <div style="background-size: cover;background-image: url(images/executiveprofile/BG.png);width: 100%;">
-                    <div style="font-family: GOTHIC;font-weight: bolder;font-size: 54px;padding-top: 40px;color: #4B9D9A;">
-                        Executive profiles
-                    </div>
-                    <div style="font-family: GOTHIC;font-weight: bolder;font-size: 22px;padding-top: 6px;color: #ffffff;">
-                        Create value for customer, Breaking old world with imagine of us.
-                    </div>
-                    <div style="display: flex;justify-content: center;">
-                        <div class="exProfile">
-                            <img src="images/executiveprofile/toung.png">
-                            <p class="exProfileName">
-                                Ukit Pakornphadungsit
-                            </p>
-                            <p class="exProfileTitle">
-                                CEO and CO-founder<br>
-                                Executive Director
-                            </p>
-                            <p class="exProfileDetail">
-                                sdsapod<br>
-                                sadsadsa
-                            </p>
-                            <p>
-                                <img src="images/executiveprofile/icon-facebook.png"><img src="images/executiveprofile/icon-gmail.png">
-                            </p>
-                        </div>
-                        <div class="exProfile">
-                            <img src="images/executiveprofile/jade.png">
-                            <p class="exProfileName">
-                                Jadsadaporn Sribua
-                            </p>
-                            <p class="exProfileTitle">
-                                Vice President and CO-fouder<br>
-                                Director
-                            </p>
-                            <p>
-                                sdsapod<br>
-                                sadsadsa
-                            </p>
-                            <p>
-                                <img src="images/executiveprofile/icon-facebook.png"><img src="images/executiveprofile/icon-gmail.png">
-                            </p>
-                        </div>
-                        <div class="exProfile">
-                            <img src="images/executiveprofile/Tom.png">
-                            <p class="exProfileName">
-                                Gasemsit Kumpradid
-                            </p>
-                            <p class="exProfileTitle">
-                                Vice President and CO-founder<br>
-                                Motion Grapher Group Head
-                            </p>
-                            <p>
-                                sdsapod<br>
-                                sadsadsa
-                            </p>
-                            <p>
-                                <img src="images/executiveprofile/icon-facebook.png"><img src="images/executiveprofile/icon-gmail.png">
-                            </p>
-                        </div>
-                        <div class="exProfile">
-                            <img src="images/executiveprofile/been.png">
-                            <p class="exProfileName">
-                                Niran Yodying
-                            </p>
-                            <p class="exProfileTitle">
-                                Vice President and CO-founder<br>
-                                Office Clerk, Operational Level
-                            </p>
-                            <p>
-                                sdsapod<br>
-                                sadsadsa
-                            </p>
-                            <p>
-                                <img src="images/executiveprofile/icon-facebook.png"><img src="images/executiveprofile/icon-gmail.png">
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                    </div><!-- End About US 2 -->
 
-                <div style="background-size: cover;background-image: url(images/howwedoit/howwedoit.png);width: 100%;">
 
+                    <div style="background-size: cover;background-image: url(images/howwedoit/hwdi-bg.jpg); width: 100%;
+                text-shadow: 0 0 2px rgba(0, 0, 0, 0.13);
+                ">
+                        <h1 style="padding: 40px;"><span style="border-left: 8px white solid; color: white; padding: 0px 20px;">HOW WE DO IT</span></h1>
+                        <div style="margin-top: 40px;"><img src="images/hwdi.png" width="706"></div>
+                    </div>
                 </div>
             </div>
+
         </div>
         <!-- Portfilios-->
-        <div class="portfilios" id="portfilios">
-            <div style="padding: 40px;text-align: center;font-family: GOTHIC;font-weight: bolder;font-size: 60px;">
-                PORTFOLIO
+        <div class="portfilios parallax__group" id="portfilios">
+            <div class="parallax__layer--base" style="width:100%; height: 100%;">
+                <div style="padding: 40px;text-align: center;font-family: GOTHIC;font-weight: bolder;font-size: 60px;">
+                    PORTFOLIO
+                </div>
+                <div style="font-family: GOTHIC;font-size: 20px;text-align: center;margin-top: -30px;">Change ideas, Change
+                    imagine, Change The world by IMAGE OF US.
+                </div>
+                <div style="padding-bottom: 100px;">
+                    <ul class="portfolio-list" style="list-style: none;text-align: center;padding-top: 100px; padding-left: 0; display: flex; justify-content: center; margin: 0;">
+                        <li class="image-holder">
+                            <div class="image-holder-box">
+                                <div class="gray-glass"></div>
+                                <img src="images/portfolios/animation.jpg">
+                            </div>
+                            <div class="image-content-box">
+                                <div class="display-table">
+                                    <div class="display-table-cell table-cell-middle">
+                                        <h4>Computer Graphic Animation</h4>
+                                        <p>
+                                            <a class="btn view-btn" href="#">View</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="image-holder">
+                            <div class="image-holder-box">
+                                <div class="gray-glass"></div>
+                                <img src="images/portfolios/construction.jpg">
+                            </div>
+
+                            <div class="image-content-box">
+                                <div class="display-table">
+                                    <div class="display-table-cell table-cell-middle">
+                                        <h4>Interactive</h4>
+                                        <p>
+                                            <a class="btn view-btn" href="#">View</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="image-holder">
+                            <div class="image-holder-box">
+                                <div class="gray-glass"></div>
+                                <img src="images/portfolios/interactive.jpg">
+                            </div>
+                            <div class="image-content-box">
+                                <div class="display-table">
+                                    <div class="display-table-cell table-cell-middle">
+                                        <h4>Construction and Design</h4>
+                                        <p>
+                                            <a class="btn view-btn" href="#">View</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="image-holder">
+                            <div class="image-holder-box">
+                                <div class="gray-glass"></div>
+                                <img src="images/portfolios/multimedia.jpg">
+                            </div>
+                            <div class="image-content-box">
+                                <div class="display-table">
+                                    <div class="display-table-cell table-cell-middle">
+                                        <h4>Multimedia</h4>
+                                        <p>
+                                            <a class="btn view-btn" href="#">View</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div style="font-family: GOTHIC;font-size: 20px;text-align: center;margin-top: -30px;">Change ideas, Change
-                imagine, Change The world bu ImAGE OF US.
-            </div>
-            <div style="padding-bottom: 80px;">
-                <ul style="list-style: none;text-align: center;padding-top: 100px;">
-                    <li style="display: inline-block;padding: 20px;position: relative;"><img
-                            src="images/portfilios/animation.png">
 
-                        <div style="position: absolute;bottom: 14px;text-align: center;width: 203px;font-family: GOTHIC">
-                            <p style="margin-bottom: 0px;font-weight: bolder;">Computer Graphic</p>
-
-                            <p style="font-weight: bolder;font-size: 20px;">Animation</p></div>
-                    </li>
-                    <li style="display: inline-block;padding: 20px;position: relative;"><img
-                            src="images/portfilios/interactive.png">
-
-                        <div style="position: absolute;bottom: 14px;text-align: center;width: 203px;font-family: GOTHIC">
-                            <p style="font-weight: bolder;font-size: 26px;margin-bottom: 16px;">Interactive</p></div>
-                    </li>
-                    <li style="display: inline-block;padding: 20px;position: relative;"><img
-                            src="images/portfilios/construction.png">
-
-                        <div style="position: absolute;bottom: 14px;text-align: center;width: 203px;font-family: GOTHIC">
-                            <p style="margin-bottom: 0px;font-weight: bolder;">Construction</p>
-
-                            <p style="font-weight: bolder;font-size: 20px;">and Design</p></div>
-                    </li>
-                    <li style="display: inline-block;padding: 20px;position: relative;"><img
-                            src="images/portfilios/multimedia.png">
-
-                        <div style="position: absolute;bottom: 14px;text-align: center;width: 203px;font-family: GOTHIC">
-                            <p style="font-weight: bolder;font-size: 20px;margin-bottom: 20px;">Multimedia</p></div>
-                    </li>
-                </ul>
-            </div>
         </div>
         <!-- End Portfilios -->
         <!-- Services -->
-        <div class="services" id="services">
-            <div style="padding: 40px;text-align: center;font-family: GOTHIC;font-weight: bolder;font-size: 60px;">
-                SERVICES
-            </div>
-            <div style="font-family: GOTHIC;font-size: 20px;text-align: center;margin-top: -30px;">Perfect creative
-                delivery, Branding promos, Innovation passion, Outside The Box
-            </div>
-            <div style="padding-bottom: 100px;">
-                <ul style="list-style: none;text-align: center;padding-top: 100px;display: flex;justify-content: center;">
-                    <li class="serviceImg"><img src="images/services/pic01-BL.png"><img src="images/services/pic01.png"
-                                                                                        class="serviceHover"></li>
-                    <li class="serviceImg"><img src="images/services/pic02-BL.png"><img src="images/services/pic02.png"
-                                                                                        class="serviceHover"></li>
-                    <li class="serviceImg"><img src="images/services/pic03-BL.png"><img src="images/services/pic03.png"
-                                                                                        class="serviceHover"></li>
-                    <li class="serviceImg"><img src="images/services/pic04-BL.png"><img src="images/services/pic04.png"
-                                                                                        class="serviceHover"></li>
-                </ul>
+        <div class="services parallax__group" id="services">
+            <div class="parallax__layer--base" style="width:100%; height: 100%;">
+                <div style="padding: 40px;text-align: center;font-family: GOTHIC;font-weight: bolder;font-size: 60px;">
+                    SERVICES
+                </div>
+                <div style="font-family: GOTHIC;font-size: 20px;text-align: center;margin-top: -30px;">Perfect creative
+                    delivery, Branding promos, Innovation passion, Outside The Box
+                </div>
+                <div style="padding-bottom: 100px;">
+                    <ul style="list-style: none;text-align: center;padding-top: 100px; padding-left: 0; display: flex; justify-content: center; margin: 0;">
+                        <li class="serviceImg">
+                            <div class="serviceThumbBox">
+                                <div class="serviceThumbContent">
+                                    <h3>ON THE MOUNTAINS</h3>
+                                    <p>January 12, 2014</p>
+                                </div>
+                                <img src="images/services2/01.jpg">
+                            </div>
+                        </li>
+                        <li class="serviceImg">
+                            <div class="serviceThumbBox">
+                                <div class="serviceThumbContent">
+                                    <h3>ON THE MOUNTAINS</h3>
+                                    <p>January 12, 2014</p>
+                                </div>
+                                <img src="images/services2/02.jpg">
+                            </div>
+                        </li>
+                        <li class="serviceImg">
+                            <div class="serviceThumbBox">
+                                <div class="serviceThumbContent">
+                                    <h3>ON THE MOUNTAINS</h3>
+                                    <p>January 12, 2014</p>
+                                </div>
+                                <img src="images/services2/03.jpg">
+                            </div>
+                        </li>
+                        <li class="serviceImg">
+                            <div class="serviceThumbBox">
+                                <div class="serviceThumbContent">
+                                    <h3>ON THE MOUNTAINS</h3>
+                                    <p>January 12, 2014</p>
+                                </div>
+                                <img src="images/services2/04.jpg">
+                            </div>
+                        </li>
+                    </ul>
+                    <ul style="list-style: none; padding: 0; text-align: center; display: flex; justify-content: center;">
+                        <li class="serviceImg">
+                            <div class="serviceThumbBox">
+                                <div class="serviceThumbContent">
+                                    <h3>ON THE MOUNTAINS</h3>
+                                    <p>January 12, 2014</p>
+                                </div>
+                                <img src="images/services2/05.jpg">
+                            </div>
+                        </li>
+                        <li class="serviceImg">
+                            <div class="serviceThumbBox">
+                                <div class="serviceThumbContent">
+                                    <h3>ON THE MOUNTAINS</h3>
+                                    <p>January 12, 2014</p>
+                                </div>
+                                <img src="images/services2/06.jpg">
+                            </div>
+                        </li>
+                        <li class="serviceImg">
+                            <div class="serviceThumbBox">
+                                <div class="serviceThumbContent">
+                                    <h3>ON THE MOUNTAINS</h3>
+                                    <p>January 12, 2014</p>
+                                </div>
+                                <img src="images/services2/07.jpg">
+                            </div>
+                        </li>
+                        <li class="serviceImg">
+                            <div class="serviceThumbBox">
+                                <div class="serviceThumbContent">
+                                    <h3>ON THE MOUNTAINS</h3>
+                                    <p>January 12, 2014</p>
+                                </div>
+                                <img src="images/services2/08.jpg">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
         <!-- End Services -->
-        <!-- CONTACT -->
-        <div class="container" style="padding-bottom: 116px;" id="contact">
-            <div style="padding: 40px;font-family: GOTHIC;font-weight: bolder;font-size: 30px;">| CONTACT</div>
-            <div style="background-color: #000000;height: 200px;"></div>
-            <div style="display: flex;">
-                <div style="width: 50%;font-family: GOTHIC;font-size: 16px;padding: 10px;">
-                    <div style="font-weight: bolder;">CONTACT INFORMATION</div>
-                    <div><br>
-                        Bangbon 3 Soi 4,
-                    </div>
-                    <div>
-                        <p>Tel. (66)-2101-8972</p>
 
-                        <p>info@Tufftex.co.th</p>
+        <!-- OUR CLIENTS -->
+        <div class="parallax__group" id="ourclients">
+            <div class="parallax__layer parallax__layer--base" style="background: white;">
+                <div style="display: table; height: 100%; width: 100%;">
+                    <div style="display: table-cell; height: 100%; width: 100%; vertical-align: middle;">
+                        <div style="width: 100%; height: 44px; margin: 0 auto;">
+                            <div class="text-center" style="width: 244px; height: 112px; margin: 0 auto;background: white;position: relative;top: 20px;">
+                                <div style="font-family: GOTHIC;font-weight: bolder;font-size: 37px;">
+                                    Our Clients
+                                </div>
+                                <div style="font-family: GOTHIC;font-size: 20px;">
+                                    Thank you support.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ourclient-line"></div>
+                        <div class="text-center" style="padding: 50px;"><img src="images/ourclients/BG.jpg"></div>
+                        <div class="ourclient-line"></div>
                     </div>
                 </div>
-                <div style="position: relative;top: -50px;background-color: #ffffff;padding: 10px;font-family: GOTHIC;font-size: 12px;font-weight: bold;color: gray;">
-                    <div>
-                        <div style="display: flex">
-                            <div style="padding: 10px;">YOUR NAME<br>
-                                <input type="text" class="form-control" placeholder="Enter Name">
-                            </div>
-                            <div style="padding: 10px;">
-                                YOUR EMAIL<br>
-                                <input type="email" class="form-control"  placeholder="Enter email">
-                            </div>
+            </div>
+        </div>
 
+        <!-- Construction -->
+        <div class="parallax__group" id="constructions">
+            <div class="parallax__layer parallax__layer--base" style="background-image: url(images/constructions/BG.jpg); background-size: cover;">
+                <div style="display: table; height: 100%; width: 100%;">
+                    <div style="display: table-cell; height: 100%; width: 100%; vertical-align: middle; text-align: center;">
+                        <div>
+                            <span class="construction-line"></span>
+                            <strong style="font-size: 33px;vertical-align: middle;padding: 0 20px;font-weight: bold;">Contruction</strong>
+                            <span class="construction-line"></span>
                         </div>
-                        <div style="padding: 10px;">
-                            Your MESSAGE<br>
-                            <textarea type="text" class="form-control" name="msg" value="" style="width: 100%;height: 126px;"></textarea><br>
-                            <button type="button" class="btn btn-success">SEND MESSAGE</button>
+                        <div class="container" style="display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: stretch;
+	align-content: stretch">
+                            <div class="construct-item">
+                                <div class="construct-item-wrap">
+                                    <div class="construct-item-description">
+                                        <i class="glyphicon glyphicon-plus plus-icon"></i>
+                                        <div class="title">
+                                            WATSON
+                                        </div>
+                                    </div>
+                                    <img src="images/constructions/watson.jpg" width="100%">
+                                </div>
+                            </div>
+                            <div class="construct-item">
+                                <div class="construct-item-wrap">
+                                    <div class="construct-item-description">
+                                        <i class="glyphicon glyphicon-plus plus-icon"></i>
+                                        <div class="title">
+                                            OSHA
+                                        </div>
+                                    </div>
+                                    <img src="images/constructions/Osha.jpg" width="100%">
+                                </div>
+                            </div>
+                            <div class="construct-item">
+                                <div class="construct-item-wrap">
+                                    <div class="construct-item-description">
+                                        <i class="glyphicon glyphicon-plus plus-icon"></i>
+                                        <div class="title">
+                                            BENCHAJINDA BUILDING
+                                        </div>
+                                    </div>
+                                    <img src="images/constructions/Benchajinda.jpg" width="100%">
+                                </div>
+                            </div>
+                            <div class="construct-item">
+                                <div class="construct-item-wrap">
+                                    <div class="construct-item-description">
+                                        <i class="glyphicon glyphicon-plus plus-icon"></i>
+                                        <div class="title">
+                                            โครงการพัฒนาพื้นที่หนองใหญ่
+                                        </div>
+                                    </div>
+                                    <img src="images/constructions/Chumporn.jpg" width="100%">
+                                </div>
+                            </div>
+                            <div class="construct-item">
+                                <div class="construct-item-wrap">
+                                    <div class="construct-item-description">
+                                        <i class="glyphicon glyphicon-plus plus-icon"></i>
+                                        <div class="title">
+                                            NSM EVENT
+                                        </div>
+                                    </div>
+                                    <img src="images/constructions/NSM.jpg" width="100%">
+                                </div>
+                            </div>
+                            <div class="construct-item">
+                                <div class="construct-item-wrap">
+                                    <div class="construct-item-description">
+                                        <i class="glyphicon glyphicon-plus plus-icon"></i>
+                                        <div class="title">
+                                            HALL OF FAME (CHANEL 5)
+                                        </div>
+                                    </div>
+                                    <img src="images/constructions/5.jpg" width="100%">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- END CONTACT -->
+        </div>
+
+        <style>
+            .construct-item {
+                flex: 1 0 auto;
+                padding: 20px;
+            }
+            .construct-item .construct-item-wrap {
+                min-width: 250px;
+                position: relative;
+                cursor: pointer;
+            }
+            .construct-item .construct-item-description {
+                background: rgba(0,0,0,0.5);
+                position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+
+                opacity: 0;
+                transition: all 400ms;
+            }
+            .construct-item:hover .construct-item-description {
+                opacity: 1;
+            }
+            .construct-item .title {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                background: rgb(45, 45, 45);
+                color: white;
+                text-align: left;
+                padding: 11px 38px;
+                font-weight: bold;
+                font-size: 14px;
+            }
+            .construct-item .plus-icon {
+                color: white;
+                line-height: 190px;
+                font-size: 20px;
+            }
+        </style>
+
+        <!-- OUR CLIENTS -->
+        <div class="parallax__group" id="executive_profiles">
+            <div class="parallax__layer parallax__layer--base" style="background-size: cover;background-image: url(images/executiveprofile/BG.jpg);">
+                <div class="container text-center">
+                    <div style="width: 100%; height: 100%;">
+                        <div style="font-family: GOTHIC;font-weight: bolder;font-size: 54px;padding-top: 40px;color: #4B9D9A;">
+                            Executive profiles
+                        </div>
+                        <div style="font-family: GOTHIC;font-weight: bolder;font-size: 22px;padding-top: 6px;color: #ffffff;">
+                            Create value for customer, Breaking old world with imagine of us.
+                        </div>
+                        <div style="display: flex;justify-content: center;">
+                            <div class="exProfile">
+                                <img src="images/executiveprofile/toung.png">
+
+                                <p class="exProfileName">
+                                    Ukit Pakornphadungsit
+                                </p>
+
+                                <p class="exProfileTitle">
+                                    CEO and CO-founder<br>
+                                    Executive Director
+                                </p>
+
+                                <p class="exProfileDetail">
+                                    sdsapod<br>
+                                    sadsadsa
+                                </p>
+
+                                <p>
+                                    <img src="images/executiveprofile/icon-facebook.png"><img
+                                        src="images/executiveprofile/icon-gmail.png">
+                                </p>
+                            </div>
+                            <div class="exProfile">
+                                <img src="images/executiveprofile/jade.png">
+
+                                <p class="exProfileName">
+                                    Jadsadaporn Sribua
+                                </p>
+
+                                <p class="exProfileTitle">
+                                    Vice President and CO-fouder<br>
+                                    Director
+                                </p>
+
+                                <p>
+                                    sdsapod<br>
+                                    sadsadsa
+                                </p>
+
+                                <p>
+                                    <img src="images/executiveprofile/icon-facebook.png"><img
+                                        src="images/executiveprofile/icon-gmail.png">
+                                </p>
+                            </div>
+                            <div class="exProfile">
+                                <img src="images/executiveprofile/Tom.png">
+
+                                <p class="exProfileName">
+                                    Gasemsit Kumpradid
+                                </p>
+
+                                <p class="exProfileTitle">
+                                    Vice President and CO-founder<br>
+                                    Motion Grapher Group Head
+                                </p>
+
+                                <p>
+                                    sdsapod<br>
+                                    sadsadsa
+                                </p>
+
+                                <p>
+                                    <img src="images/executiveprofile/icon-facebook.png"><img
+                                        src="images/executiveprofile/icon-gmail.png">
+                                </p>
+                            </div>
+                            <div class="exProfile">
+                                <img src="images/executiveprofile/been.png">
+
+                                <p class="exProfileName">
+                                    Niran Yodying
+                                </p>
+
+                                <p class="exProfileTitle">
+                                    Vice President and CO-founder<br>
+                                    Office Clerk, Operational Level
+                                </p>
+
+                                <p>
+                                    sdsapod<br>
+                                    sadsadsa
+                                </p>
+
+                                <p>
+                                    <img src="images/executiveprofile/icon-facebook.png"><img
+                                        src="images/executiveprofile/icon-gmail.png">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="parallax__group" id="contact">
+            <div class="parallax__layer parallax__layer--base" style="background: white;">
+                <div class="container" style="padding-bottom: 116px;">
+                    <div style="padding: 40px;font-family: GOTHIC;font-weight: bolder;font-size: 30px;">| CONTACT</div>
+                    <div style="background-color: #000000;height: 200px;"></div>
+                    <div style="display: flex;">
+                        <div style="width: 50%;font-family: GOTHIC;font-size: 16px;padding: 10px;">
+                            <div style="font-weight: bolder;">CONTACT INFORMATION</div>
+                            <div><br>
+                                Bangbon 3 Soi 4,
+                            </div>
+                            <div>
+                                <p>Tel. (66)-2101-8972</p>
+                                <p>info@Tufftex.co.th</p>
+                            </div>
+                        </div>
+                        <div style="position: relative;top: -50px;background-color: #ffffff;padding: 10px;font-family: GOTHIC;font-size: 12px;font-weight: bold;color: gray;">
+                            <div>
+                                <div style="display: flex">
+                                    <div style="padding: 10px;">YOUR NAME<br>
+                                        <input type="text" class="form-control" placeholder="Enter Name">
+                                    </div>
+                                    <div style="padding: 10px;">
+                                        YOUR EMAIL<br>
+                                        <input type="email" class="form-control" placeholder="Enter email">
+                                    </div>
+
+                                </div>
+                                <div style="padding: 10px;">
+                                    Your MESSAGE<br>
+                                    <textarea type="text" class="form-control" name="msg" value="" style="width: 100%;height: 126px;"></textarea><br>
+                                    <button type="button" class="btn btn-success">SEND MESSAGE</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END CONTACT -->
+                </div>
+            </div>
         </div>
     </div>
-
+    </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.nicescroll.min.js"></script>
+
+    <link rel="stylesheet" href="swipebox-master/src/css/swipebox.min.css">
+    <script src="swipebox-master/src/js/jquery.swipebox.min.js"></script>
+    <script>
+        $(function(){
+            $('.construct-item-wrap').click(function(e) {
+                e.preventDefault();
+                $.swipebox([
+                    { href:'images/constructions/watson/1.jpg', title:'Caption 1' },
+                    { href:'images/constructions/watson/2.jpg', title:'Caption 2' },
+                    { href:'images/constructions/watson/3.jpg', title:'Caption 3' },
+                    { href:'images/constructions/watson/4.jpg', title:'Caption 4' },
+                    { href:'images/constructions/watson/5.jpg', title:'Caption 5' }
+                ]);
+            } );
+        });
+    </script>
     <script>
         $(document).ready(function () {
-            $("html").niceScroll();
+            var paralax = $('.parallax');
 
-            setTimeout(function () {
-                $("#v1").animate({
-                    opacity: 1,
-                    top: "80"
-                }, 1000, function () {
+            var is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
+            if(is_chrome){
+                var wH = $(window).height();
+                var parallaxNiceScroll = paralax.niceScroll({ /*scrollspeed : 80, mousescrollstep: 120,*/ horizrailenabled: false });
+            }
+
+            var vCur = 0;
+            var vMax = 3;
+
+            $(".prev-btn").click(function(){
+                vCur--;
+                if (vCur < 0) {
+                    vCur = vMax -1;
+                }
+                var pec = vCur/vMax;
+                pec = pec*100;
+                $(".flex-slide-wrap").css({
+                    "transform": "translateX(-"+pec+"%)"
                 });
-            }, 2000);
+            });
 
-            var aboutDivMax = 4;
+            $(".next-btn").click(function(){
+                vCur++;
+                if (vCur == vMax) {
+                    vCur = 0;
+                }
+                var pec = vCur/vMax;
+                pec = pec*100;
+                $(".flex-slide-wrap").css({
+                    "transform": "translateX(-"+pec+"%)"
+                });
+            });
+
+            var aboutDivMax = 3;
             var aboutDivCur = 0;
             $("#aboutRarrow").click(function(){
                 aboutDivCur++;
@@ -582,8 +924,8 @@
                     return;
                 }
                 $("#aboutMainDiv").css({
-                "-webkit-transform": "translateX(-"+pec+"%)",
-                    "-webkit-transition" : "-webkit-transform 800ms"
+                    "transform": "translateX(-"+pec+"%)",
+                    "transition" : "transform 800ms"
                 });
             });
 
@@ -596,92 +938,45 @@
                     return;
                 }
                 $("#aboutMainDiv").css({
-                    "-webkit-transform": "translateX(-"+pec+"%)",
-                    "-webkit-transition" : "-webkit-transform 800ms"
+                    "transform": "translateX(-"+pec+"%)",
+                    "transition" : "transform 800ms"
                 });
             });
 
             $('a[href*=#]:not([href=#])').click(function() {
                 if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
                     var target = $(this.hash);
-                    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-                    if (target.length) {
-                        $("html, body").animate({
-                            scrollTop: target.offset().top-73
+                    var offsetTop = target.offset().top + paralax.scrollTop()
+                    if (target.size() > 0) {
+                        $(paralax).stop().animate({
+                            scrollTop: offsetTop-73
                         }, 1000);
                         return false;
                     }
                 }
             });
 
-            var mainHeight = $("#main").height();
-            var aboutusHeight = $("#aboutus").height();
-            var portfolioHeight = $("#portfilios").height();
-            var servicesHeight = $("#services").height();
-            var contactHeight = $("#contact").height();
-
-            $(window).scroll(function () {
-                console.log($(window).scrollTop());
-
-                if ($(window).scrollTop() == 0 ) {
-                    clearliActive();
-                    $(".liMain").addClass("active");
-                    $(".logoImg").attr("src","images/bar/logo.png");
-                    /*
-                    $(".navbar-inverse").css({
-                        "background-image" : "url(images/head/Bar.png)"
-                    });
-                    */
+            // scroll event
+            $(paralax).scroll(function () {
+                if (paralax.scrollTop() == 0 ) {
                     $(".navbar").removeClass("fontBlack");
                 }
-
-                if ($(window).scrollTop() > 10 ) {
-                    $(".logoImg").attr("src","images/head/logo.png");
-                    /*
-                    $(".navbar-inverse").css({
-                        "background-image" : "url(images/bar/line.png)"
-                    });*/
+                else {
                     $(".navbar").addClass("fontBlack");
-
                 }
 
-                if ($(window).scrollTop() > $("#aboutus").offset().top-74)  {
-                    clearliActive();
-                    $(".liAbout").addClass("active");
-                }
-
-                if ($(window).scrollTop() > $("#portfilios").offset().top-74)  {
-                    clearliActive();
-                    $(".liPortfolio").addClass("active");
-                }
-
-                if ($(window).scrollTop() > $("#services").offset().top-74)  {
-                    clearliActive();
-                    $(".liService").addClass("active");
-                }
-
-                if ($(window).scrollTop() > $("#contact").offset().top-100)  {
-                    clearliActive();
-                    $(".liContact").addClass("active");
-                }
-
-
-                console.log("about " + $("#aboutus").offset().top);
-                console.log("portfolios " + $("#portfilios").offset().top);
-                console.log("services " + $("#services").offset().top);
-                console.log("contact " + $("#contact").offset().top);
-
-
+                $('.parallax__group').each(function(index, element){
+                    var posTop = $(element).offset().top + paralax.scrollTop();
+                    if(paralax.scrollTop() >= posTop - 74){
+                        var selector = $(element).attr('id');
+                        var li = $(".navbar-nav a[href='#"+selector+"']").parent();
+                        if(li.size() > 0 && !li.hasClass("active")){
+                            $(".navbar-nav li").removeClass("active");
+                            $(".navbar-nav a[href='#"+selector+"']").parent().addClass("active");
+                        }
+                    }
+                });
             });
-
-            function clearliActive() {
-                $(".liMain").removeClass("active");
-                $(".liAbout").removeClass("active");
-                $(".liPortfolio").removeClass("active");
-                $(".liService").removeClass("active");
-                $(".liContact").removeClass("active");
-            }
-
         });
     </script>
 </body>
