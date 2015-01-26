@@ -76,10 +76,14 @@
 
 .parallax__group {
     position: relative;
-    height: 500px; /* fallback for older browsers */
-    height: 100vh;
+    /*height: 500px; *//* fallback for older browsers */
+    /*height: 100vh;*/
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
+}
+
+.parallax__group.head {
+    height: 100%;
 }
 
 .parallax__layer {
@@ -129,8 +133,8 @@
 
 .parallax__group {
     position: relative;
-    height: 500px; /* fallback for older browsers */
-    height: 100vh;
+    /*height: 500px; *//* fallback for older browsers */
+    /*height: 100vh;*/
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
 }
@@ -153,6 +157,7 @@
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     z-index: 4;
+    position: static;
 }
 
 .parallax__layer--back {

@@ -22,3 +22,8 @@
     font-family: PSL;
     src: url(PSL.TTF);
 }
+
+@font-face {
+    font-family: Cocogoose;
+    src: url(Cocogoose_trial.otf);
+}

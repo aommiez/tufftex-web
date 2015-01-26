@@ -34,8 +34,9 @@
 .navbar-nav > li > a {
     line-height: 43px;
     font-weight: bolder;
-    font-size: 18px;
-    font-family: GOTHIC;
+    /*font-size: 18px;*/
+    /*font-family: GOTHIC;*/
+    font-size: 16px;
 }
 .navbar.fontBlack {
     opacity: 1;
