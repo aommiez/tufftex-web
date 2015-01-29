@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>tufftex</title>
+    <title>Tufftex Group</title>
     <meta name="Description" content="tufftex des">
     <meta name="Keywords" content="tufftex key">
 
@@ -249,8 +249,8 @@
             <ul class="nav navbar-nav" style="float: right;">
                 <li><a href="#"
                        style="font-size: 44px;font-weight: normal;padding: 12px 0px 12px 0px;">|</a></li>
-                <li><a href="#"><img src="images/head/iconFacebook.png"></a></li>
-                <li><a href="#"><img src="images/head/iconyoutube.png"></a></li>
+                <li><a href="https://www.facebook.com/tufftexgroup?fref=ts"><img src="images/head/iconFacebook.png"></a></li>
+                <li><a href="https://www.youtube.com/channel/UC-DCH6SkMYaPoUjJcXMMxPw"><img src="images/head/iconyoutube.png"></a></li>
                 <li><a href="#"><img src="images/head/icongmail.png"></a></li>
             </ul>
         </div>
@@ -370,7 +370,6 @@
                     });
 
                     if(oldItem.size() != 0){
-                        console.log(oldItem, oldIndex);
                         $('video', oldItem).get(0).pause();
                         $('video', oldItem).get(0).currentTime = 0;
                     }
@@ -497,6 +496,28 @@
                 -o-animation-delay: 1.2s;
                 animation-delay: 1.2s;
             }
+
+            /**************/
+            .how-we-do-content {
+                /*-webkit-animation-duration: 2s;*/
+                /*-moz-animation-duration: 2s;*/
+                /*-o-animation-duration: 2s;*/
+                /*animation-duration: 2s;*/
+
+                margin-top: 44px;
+                text-align: right;
+                margin-right: 184px;
+                zoom: 1.2;
+                transform: translateX(-226px);
+                transition: all 2s;
+                opacity: 0;
+            }
+            
+            .in .how-we-do-content {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            /**************/
         </style>
         <div class="aboutus parallax__group" style="text-align: center;overflow: hidden;position: relative; z-index: 10;" id="aboutus">
 
@@ -513,15 +534,15 @@
                     <span class="next-btn"></span>
                     <div class="flex-slide-wrap" style="background: white; width: 300%;">
                         <div class="flex-slide-item">
-                            <div style="font-weight: bolder;font-size: 40px;padding-top: 60px;">
+                            <div style="font-weight: bolder;font-size: 40px;padding-top: 112px;">
                                     <span style="border-left: 12px solid #333;
                                     padding: 0px 30px;
                                     display: inline-block;
                                     line-height: 47px;
                                     vertical-align: middle;">WHAT WE DO</span>
                             </div>
-                            <div id="wwd-animation" class="what-we-do-bg" style="width: 1050px; align-items: center; margin: 142px auto 0 auto;">
-                                <div style="display: flex;">
+                            <div id="wwd-animation" class="what-we-do-bg" style="width: 1050px; align-items: center; margin: 102px auto 0 auto;">
+                                <div class="flex">
                                     <div class="wwd-item wwd-item-1" style="width: 100%; text-align: center;">
                                         <img src="images/whatwedo/01.png">
                                     </div>
@@ -552,7 +573,7 @@
                                     display: inline-block;">
                                     COMPANY
                                 </div>
-                                <div style="display: flex;text-align: left;justify-content: center;">
+                                <div class="flex" style="text-align: left;justify-content: center;">
                                     <div style="font-size: 65px;
                                     font-weight: bolder;
                                     font-style: italic;
@@ -587,9 +608,9 @@
                                         ให้สอดคล้องกับกลุ่มเป้าหมายที่ต้องการ
                                     </div>
                                 </div>
-                                <div style="display: flex;justify-content: center;">
+                                <div class="flex" style="justify-content: center;">
                                     <div style="padding-top: 46px;">
-                                        <div style="display: flex;justify-content: center;font-size: 60px;">
+                                        <div class="flex" style="justify-content: center;font-size: 60px;">
                                             <div style="background-color: #ffffff;width: 2px;margin-right: 2px;">
                                             </div>
                                             <div style="background-color: #ffffff;width: 2px;margin-right: 10px;">
@@ -611,10 +632,10 @@
                                     </div>
 
                                     <div style="position: relative;top: -22px;">
-                                        <div style="display: flex;justify-content: center;font-size: 60px;">
+                                        <div class="flex" style="justify-content: center;font-size: 60px;">
                                             <div style="text-align: right;">
                                                 Vision
-                                                <div style="display: flex;justify-content: center;font-weight: bolder;">
+                                                <div class="flex" style="justify-content: center;font-weight: bolder;">
                                                     <div style="font-size: 24px;font-weight: bolder;">
                                                         ผสมผสานการออกแบบและเทคโนโลยีเพื่อความทันสมัยและมีระดับแก่มวลชน
                                                     </div>
@@ -631,13 +652,21 @@
                         </div>
 
                         <div class="flex-slide-item">
-                            <div style="background-size: cover;background-image: url(images/howwedoit/hwdi-bg.jpg); width: 100%; height:100%;
-                text-shadow: 0 0 2px rgba(0, 0, 0, 0.13);
-                ">
-                                <h1 style="margin: 0;padding-bottom: 20px;padding-top: 76px;">
-                                    <span style="margin-top: 30px; border-left: 12px white solid; color: white; padding: 0px 20px;line-height: 1.1em; display: inline-block;">HOW WE DO IT</span>
+                            <div style="background-size: cover;background-image: url(images/bg_how-we-do-it.jpg); width: 100%; height:100%;
+                text-shadow: 0 0 2px rgba(0, 0, 0, 0.13);">
+                                <h1 style="margin: 0;padding-top: 80px;">
+                                    <span style="margin-top: 41px;
+                                    border-left: 12px rgb(35, 31, 32) solid;
+                                    color: rgb(35, 31, 32);
+                                    padding: 0px 20px;
+                                    line-height: 1.1em;
+                                    display: inline-block;
+                                    margin-left: 730px;">HOW WE DO IT</span>
                                 </h1>
-                                <div style="margin-top: 40px;"><img src="images/hwdi.png" width="706"></div>
+                                <div class="how-we-do-content" style="
+                                margin-top: 44px;
+                                text-align: right;
+                                margin-right: 184px;"><img src="images/Text_how_we_do_it.png" width="557"></div>
                             </div>
                         </div>
                     </div>
@@ -701,6 +730,13 @@
                         height: 636px;
                     }
 
+                    .flex {
+                        display: -webkit-box;
+                        display: -moz-box;
+                        display: -ms-flexbox;
+                        display: flex;
+                    }
+
                     .flex-slide {
                         position: relative;
                         width: 100%;
@@ -727,6 +763,9 @@
                     }
 
                     .flex-slide-wrap {
+                        display: -webkit-box;
+                        display: -moz-box;
+                        display: -ms-flexbox;
                         display: flex;
                     }
 
@@ -744,15 +783,33 @@
                     .product-title {
                         font-size: 24px;
                     }
+
+                    .setScrollAnimationProduct .image-holder {
+                        transform: scale(0);
+                        transition: all 1s;
+                    }
+
+                    .setScrollAnimationProduct.firstSee .image-holder {
+                        transform: none;
+                    }
+
+                    .setScrollAnimationService .image-holder {
+                        transform: scale(0);
+                        transition: all 1s;
+                    }
+
+                    .setScrollAnimationService.firstSee .image-holder {
+                        transform: none;
+                    }
                 </style>
                 <div class="section-body">
                     <div class="flex-slide">
                         <span class="prev-btn"></span>
                         <span class="next-btn"></span>
 
-                        <div class="flex-slide-wrap" style="width: 200%;">
+                        <div class="flex-slide-wrap setScrollAnimationProduct" style="width: 200%;">
                             <div class="flex-slide-item">
-                                <ul class="portfolio-list list-unstyled text-center" style="display: flex; justify-content: center; margin: 0;">
+                                <ul class="portfolio-list list-unstyled flex text-center" style="justify-content: center; margin: 0;">
                                     <li class="image-holder">
                                         <div class="image-holder-box">
                                             <div class="gray-glass"></div>
@@ -769,7 +826,7 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="image-holder">
+                                    <li class="image-holder" style="transition-delay: 0.1s;">
                                         <div class="image-holder-box">
                                             <div class="gray-glass"></div>
                                             <img src="images/port3/construction.jpg">
@@ -786,7 +843,7 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="image-holder">
+                                    <li class="image-holder" style="transition-delay: 0.2s;">
                                         <div class="image-holder-box">
                                             <div class="gray-glass"></div>
                                             <img src="images/port3/Digital-Mirror.jpg">
@@ -803,7 +860,7 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="image-holder">
+                                    <li class="image-holder" style="transition-delay: 0.3s;">
                                         <div class="image-holder-box">
                                             <div class="gray-glass"></div>
                                             <img src="images/port3/hologram.jpg">
@@ -821,8 +878,8 @@
                                     </li>
                                 </ul>
 
-                                <ul class="portfolio-list list-unstyled text-center" style="display: flex; justify-content: center; margin: 0;">
-                                    <li class="image-holder">
+                                <ul class="portfolio-list list-unstyled flex text-center" style="justify-content: center; margin: 0;">
+                                    <li class="image-holder" style="transition-delay: 0.4s;">
                                         <div class="image-holder-box">
                                             <div class="gray-glass"></div>
                                             <img src="images/port3/kinect.jpg">
@@ -838,7 +895,7 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="image-holder">
+                                    <li class="image-holder" style="transition-delay: 0.5s;">
                                         <div class="image-holder-box">
                                             <div class="gray-glass"></div>
                                             <img src="images/port3/Leap-motion.jpg">
@@ -854,7 +911,7 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="image-holder">
+                                    <li class="image-holder" style="transition-delay: 0.6s;">
                                         <div class="image-holder-box">
                                             <div class="gray-glass"></div>
                                             <img src="images/port3/Mapping.jpg">
@@ -871,7 +928,7 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="image-holder">
+                                    <li class="image-holder" style="transition-delay: 0.7s;">
                                         <div class="image-holder-box">
                                             <div class="gray-glass"></div>
                                             <img src="images/port3/Rear-Projection-Screen.jpg">
@@ -891,8 +948,8 @@
                             </div>
 
                             <div class="flex-slide-item">
-                                <ul class="portfolio-list list-unstyled text-center" style="display: flex; justify-content: left; margin: 0;">
-                                    <li class="image-holder">
+                                <ul class="portfolio-list list-unstyled flex text-center" style="justify-content: left; margin: 0;">
+                                    <li class="image-holder" style="transition-delay: 0.8s;">
                                         <div class="image-holder-box">
                                             <div class="gray-glass"></div>
                                             <img src="images/port3/Touch-Screen.jpg">
@@ -908,7 +965,7 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="image-holder">
+                                    <li class="image-holder" style="transition-delay: 0.9s;">
                                         <div class="image-holder-box">
                                             <div class="gray-glass"></div>
                                             <img src="images/port3/Transparent-LCD-with-touch-screen.jpg">
@@ -924,7 +981,7 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="image-holder">
+                                    <li class="image-holder" style="transition-delay: 1s;">
                                         <div class="image-holder-box">
                                             <div class="gray-glass"></div>
                                             <img src="images/port3/Virtual-Presenter.jpg">
@@ -981,8 +1038,8 @@
                     </div>
                 </div>
 
-                <div class="section-body portfolio-page">
-                    <ul class="portfolio-list list-unstyled text-center" style="display: flex; justify-content: center; margin: 0;">
+                <div class="section-body portfolio-page setScrollAnimationService">
+                    <ul class="portfolio-list list-unstyled flex text-center" style="justify-content: center; margin: 0;">
                         <li class="image-holder service-item">
                             <div class="image-holder-box">
                                 <div class="gray-glass"></div>
@@ -994,7 +1051,7 @@
                                 </a>
                             </div>
                         </li>
-                        <li class="image-holder service-item">
+                        <li class="image-holder service-item" style="transition-delay: 0.2s;">
                             <div class="image-holder-box">
                                 <div class="gray-glass"></div>
                                 <img src="images/services2/vdo.jpg">
@@ -1005,7 +1062,7 @@
                                 </a>
                             </div>
                         </li>
-                        <li class="image-holder service-item">
+                        <li class="image-holder service-item" style="transition-delay: 0.4s;">
                             <div class="image-holder-box">
                                 <div class="gray-glass"></div>
                                 <img src="images/services2/program.jpg">
@@ -1016,7 +1073,7 @@
                                 </a>
                             </div>
                         </li>
-                        <li class="image-holder service-item">
+                        <li class="image-holder service-item" style="transition-delay: 0.6s;">
                             <div class="image-holder-box">
                                 <div class="gray-glass"></div>
                                 <img src="images/services2/av.jpg">
@@ -1046,7 +1103,7 @@
                                 Create value for customer, Breaking old world with imagine of us.
                             </div>
                         </div>
-                        <div style="display: flex;justify-content: center;transform: translateY(-48px);">
+                        <div class="flex" style="justify-content: center;transform: translateY(-48px);">
                             <div class="exProfile">
                                 <img src="images/executiveprofile/toung.png">
 
@@ -1208,7 +1265,7 @@
                     font-size: 30px;">STAY IN TOUCH</div>
 
                     <div style="height: 200px;"><img src="images/contact/map.jpg"></div>
-                    <div style="display: flex;">
+                    <div class="flex">
                         <div style="width: 50%;font-size: 16px;padding: 20px 16px;">
                             <div style="font-weight: bolder;">CONTACT INFORMATION</div>
                             <div style="margin-top: 10px;">
@@ -1283,7 +1340,7 @@
             var is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
             if(is_chrome){
                 var wH = $(window).height();
-                var parallaxNiceScroll = paralax.niceScroll({ /*scrollspeed : 80, mousescrollstep: 120,*/ horizrailenabled: false });
+                var parallaxNiceScroll = paralax.niceScroll({ "horizrailenabled": false });
             }
 
             $('.flex-slide').each(function(index, el){
@@ -1300,6 +1357,10 @@
                     wrap.css({
                         "transform": "translateX(-"+pec+"%)"
                     });
+
+                    wrap.children('.flex-slide-item').removeClass('in')
+                    var item = wrap.children('.flex-slide-item').eq(current);
+                    item.addClass('in');
                 });
 
                 $(".next-btn", el).click(function(){
@@ -1311,6 +1372,10 @@
                     wrap.css({
                         "transform": "translateX(-"+pec+"%)"
                     });
+
+                    wrap.children('.flex-slide-item').removeClass('in')
+                    var item = wrap.children('.flex-slide-item').eq(current);
+                    item.addClass('in');
                 });
             });
 
@@ -1373,6 +1438,12 @@
 
                         if($(window).height() > $('#wwd-animation').offset().top){
                             $('#wwd-animation').addClass('firstSee');
+                        }
+                        if($(window).height() > $('.setScrollAnimationProduct').offset().top){
+                            $('.setScrollAnimationProduct').addClass('firstSee');
+                        }
+                        if($(window).height() > $('.setScrollAnimationService').offset().top){
+                            $('.setScrollAnimationService').addClass('firstSee');
                         }
 
                         var li = $(".navbar-nav a[href='#"+selector+"']").parent();
