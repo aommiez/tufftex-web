@@ -126,8 +126,9 @@
         <img src="cp_img/macbook.png" style="position: relative; left: 5px;" class="fadeInLeft animated item-icon">
         <img src="cp_img/text1.png" style="position: relative; right: 5px;" class="fadeInRight animated item-text">
     </div>
-    <div class="text-center" style="margin-top: 40px;">
-        <img src="cp_img/text2.png" class="fadeInUp animated item-text2">
+    <div class="text-center fadeInUp animated item-text2" style="margin-top: 40px; font-family: thaisanslite; font-size: 22px; text-shadow: 0 1px 1px rgba(0,0,0,0.7);">
+<!--        <img src="cp_img/text2.png" class="">-->
+        ชุดคำสั่งที่เขียนขึ้นเพื่อให้คอมพิวเตอร์ทำงานได้ตามที่ต้องการ โดยการเขียนโปรแกรม คือ การเขียนชุดคำสั่งด้วยภาษาคอมพิวเตอร์ภาษาใดภาษาหนึ่ง เช่น FORTRAN, COBOL, PASCAL, C, C++, Java, Prolog, Lisp ซึ่งไม่ว่าจะเขียนโปรแกรมด้วยภาษาใด ในขั้นตอนสุดท้ายจะต้องมีการแปลให้เป็นภาษาที่คอมพิวเตอร์สามารถเข้าใจได้ก่อน
     </div>
 </div>
 

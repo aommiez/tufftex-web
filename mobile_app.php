@@ -118,8 +118,11 @@
 </div>
 <div class="container">
     <div class="row" style="width: 980px; margin: 0 auto; margin-top: 104px;">
-        <div class="col-lg-7 col-md-7">
-            <img src="service_img/mobile/textl.png" class="item-text fadeInLeft animated" style="margin-top: 20px;">
+        <div class="col-lg-7 col-md-7 text-center item-text fadeInLeft animated">
+            <img src="service_img/mobile/textl.png" class="" style="margin-top: 20px;">
+            <div style="font-family: thaisanslite; font-size: 20px; text-shadow: 0 1px 1px rgba(0,0,0,0.7); margin-top: 20px;">
+                เป็นการพัฒนาโปรแกรมประยุกต์สำหรับอุปกรณ์เคลื่อนที่ โดยโปรแกรมจะช่วยตอบสนองความต้องการของผู้บริโภค อีกทั้งยังสนับสนุนให้ผู้ใช้โทรศัพท์ได้ใช้ง่ายยิ่งขึ้น ในปัจจุบันโทรศัพท์มือ หรือ สมาร์ทโฟน  มีหลายระบบปฏิบัติการที่พัฒนาออกมาให้ผู้บริโภคใช้ โดย iOS และ Android ได้รับความนิยมเป็นอย่างมาก จึงทำให้เกิดการเขียนหรือพัฒนา Application ลงบนสมาร์ทโฟน อย่างแพร่หลาย
+            </div>
         </div>
         <div class="col-lg-5 col-md-5">
             <img src="service_img/mobile/iphone.png" class="item-icon fadeInDown animated">

@@ -56,6 +56,11 @@
             -moz-animation-delay: 500ms;
             -o-animation-delay: 500ms;
             animation-delay: 500ms;
+
+            -webkit-animation-duration: 2000ms;
+            -moz-animation-duration: 2000ms;
+            -o-animation-duration: 2000ms;
+            animation-duration: 2000ms;
         }
 
         .item-icon {
@@ -107,8 +112,11 @@
         <div class="col-lg-7 col-md-7">
             <img src="service_img/video_production/computer.png" class="item-icon fadeInLeft animated">
         </div>
-        <div class="col-lg-5 col-md-5">
-            <img src="service_img/video_production/text.png" class="item-text fadeInDown animated" style="margin-top: 104px;">
+        <div class="col-lg-5 col-md-5 item-text fadeInDown animated text-center">
+            <img src="service_img/video_production/text.png" style="margin-top: 78px;">
+            <div style="font-family: thaisanslite; font-size: 22px; padding: 0 20px; text-shadow: 0 1px 1px rgba(0,0,0,0.7);">
+                การผลิตสื่อวีดิทัศน์ ต้องอาศัยกระบวนการผลิตที่มีประสิทธิภาพมีขั้นตอนการทำงานที่เป็นระบบ เนื่องจากมีกระบวนการที่ซับซ้อน และมีปัจจัยหลายประการที่ส่งผลต่อความสำเร็จหรือความล้มเหลวของการทำงาน เช่น บุคลากรในการผลิต อุปกรณ์เครื่องมือในการ ถ่ายทำการ บริหารจัดการ งบประมาณ เวลา
+            </div>
         </div>
     </div>
 </div>

@@ -108,9 +108,21 @@
 </div>
 <div>
     <div class="row text-center" style="width: 980px; margin: 0 auto;">
-        <div><img src="av_img/text.png" class="fadeInDown animated item-text"></div>
+        <div class="fadeInDown animated item-text">
+            <img src="av_img/text.png">
+            <div class="text-center" style="font-family: thaisanslite;
+font-size: 22px;
+padding: 10px 0 0 0;
+margin: 0 auto;
+width: 720px;
+font-weight: bold;">
+                การนำอุปกรณ์นำเสนอภาพและอุปกรณ์เครื่องเสียงต่างๆมาเชื่อมต่อกันให้ทำงานอย่างเป็นระบบจึงเป็นการรวบรวมอุปกรณ์เกี่ยวกับภาพและเสียงที่มีความสัมพันธ์กันมาจัดให้เกิดความสมดุลในการเชื่อมต่อเพื่อให้เกิดประสิทธิภาพสูงสุดตรงตามวัตถุประสงค์การใช้งานที่แตกต่างกัน
+            </div>
+        </div>
     </div>
-    <div style="margin-top: 34px; background: url(av_img/line.png); background-repeat: repeat-x; text-align: center;" class="fadeInUp animated item-icon"><img src="av_img/bar.png"></div>
+    <div style="margin-top: 34px; background: url(av_img/line.png); background-repeat: repeat-x; text-align: center;" class="fadeInUp animated item-icon">
+        <img src="av_img/bar.png">
+    </div>
 </div>
 
 </body>
